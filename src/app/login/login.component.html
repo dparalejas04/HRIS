@@ -1,0 +1,76 @@
+<div class="login-bg"></div>
+<div class="home-login-container">
+  <div class="login-inner-container">
+    <div class="card">
+      <div class="login-container">
+        <div class="logo-container">
+          <!-- <div class="hris-logo"></div> -->
+          <img src="/assets/HRISLogo.png" class="hris-logo" alt="Logo" />
+        </div>
+        <div class="form-container">
+          <label>Username:</label>
+          <input
+            type="text"
+            id="username"
+            class="hris-input"
+            placeholder="Enter Username"
+          />
+          <label>Password:</label>
+          <!-- <input
+            type="password"
+            id="password"
+            class="hris-input"
+            placeholder="Enter Password"
+          />
+          <span><i class="fa fa-eye" area-hidden="true" id="eye"></i></span> -->
+
+          <!-- <div class="myFlex">
+            <input
+              type="password"
+              class="hris-input"
+              name="password"
+              id="password"
+              placeholder="Enter Password"
+            />
+            <i class="fa fa-eye" id="togglePassword" (click)="viewpass()"></i>
+          </div> -->
+
+          <div class="myFlex">
+            <input
+              [type]="changetype ? 'password' : 'text'"
+              class="hris-input"
+              name="password"
+              id="password"
+              placeholder="Enter Password"
+            />
+            <span class="eyeicon" (click)="viewpass()"
+              ><i
+                [ngClass]="visible ? 'fa fa-eye' : 'fa fa-eye-slash'"
+                id="togglePassword"
+              ></i
+            ></span>
+          </div>
+        </div>
+        <div class="fp-container">
+          <span class="fpws"><a href="#">Forgot Password?</a></span>
+        </div>
+        <div class="login-form-action">
+          <button type="button" class="button" (click)="loginValidate()">
+            <span>LOGIN</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-container">
+      <div class="footer">
+        <span class="footer-info">Manage Employee Data | Powered by Intercard Inc.</span>
+        <img
+          src="/assets/Login assets/IntercardLogo.png"
+          class="intercard-logo"
+          alt="Intercard Logo"
+        />
+      </div>
+    </div>
+  </div>
+</div>
