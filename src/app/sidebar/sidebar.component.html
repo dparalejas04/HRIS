@@ -1,1 +1,121 @@
-<p>sidebar works!</p>
+<div class="header-container">
+  <div class="header">
+    <button nz-button nzType="primary" (click)="toggleCollapsed()">
+      <span nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></span>
+    </button>
+  </div>
+</div>
+<div class="wrapper">
+  <ul nz-menu nzMode="inline" nzTheme="light" [nzInlineCollapsed]="isCollapsed">
+    <li
+      id="dashboard"
+      nz-menu-item
+      nz-tooltip
+      nzTooltipPlacement="right"
+      [nzTooltipTitle]="isCollapsed ? 'Dashboard' : ''"
+      nzSelected
+    >
+      <span nz-icon nzType="dashboard"></span>
+      <span>Dashboard</span>
+    </li>
+
+    <li
+      id="employees"
+      nz-menu-item
+      nz-tooltip
+      nzTooltipPlacement="right"
+      [nzTooltipTitle]="isCollapsed ? 'Employees' : ''"
+    >
+      <span nz-icon nzType="employees"></span>
+      <span>Employees</span>
+    </li>
+
+    <li
+      id="department"
+      nz-menu-item
+      nz-tooltip
+      nzTooltipPlacement="right"
+      [nzTooltipTitle]="isCollapsed ? 'Department' : ''"
+    >
+      <span nz-icon nzType="department"></span>
+      <span>Department</span>
+    </li>
+
+    <li
+      id="position"
+      nz-menu-item
+      nz-tooltip
+      nzTooltipPlacement="right"
+      [nzTooltipTitle]="isCollapsed ? 'Position' : ''"
+    >
+      <span nz-icon nzType="position"></span>
+      <span>Position</span>
+    </li>
+
+    <li
+      id="computers"
+      nz-menu-item
+      nz-tooltip
+      nzTooltipPlacement="right"
+      [nzTooltipTitle]="isCollapsed ? 'Computers' : ''"
+    >
+      <span nz-icon nzType="computers"></span>
+      <span>Computers</span>
+    </li>
+
+    <li
+      id="appraisal"
+      nz-menu-item
+      nz-tooltip
+      nzTooltipPlacement="right"
+      [nzTooltipTitle]="isCollapsed ? 'Appraisal' : ''"
+    >
+      <span nz-icon nzType="appraisal"></span>
+      <span>Appraisal</span>
+    </li>
+
+    <li
+      id="salary"
+      nz-menu-item
+      nz-tooltip
+      nzTooltipPlacement="right"
+      [nzTooltipTitle]="isCollapsed ? 'Salary' : ''"
+    >
+      <span nz-icon nzType="salary"></span>
+      <span>Salary</span>
+    </li>
+
+    <li
+      id="timesheet"
+      nz-menu-item
+      nz-tooltip
+      nzTooltipPlacement="right"
+      [nzTooltipTitle]="isCollapsed ? 'Timesheet' : ''"
+    >
+      <span nz-icon nzType="timesheet"></span>
+      <span>Timesheet</span>
+    </li>
+
+    <li
+      id="leave"
+      nz-menu-item
+      nz-tooltip
+      nzTooltipPlacement="right"
+      [nzTooltipTitle]="isCollapsed ? 'Leave' : ''"
+    >
+      <span nz-icon nzType="leave"></span>
+      <span>Leave</span>
+    </li>
+
+    <li
+      id="expenses"
+      nz-menu-item
+      nz-tooltip
+      nzTooltipPlacement="right"
+      [nzTooltipTitle]="isCollapsed ? 'Expenses' : ''"
+    >
+      <span nz-icon nzType="expenses"></span>
+      <span>Expenses</span>
+    </li>
+  </ul>
+</div>

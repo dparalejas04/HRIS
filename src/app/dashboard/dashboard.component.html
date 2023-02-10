@@ -1,0 +1,74 @@
+<nz-layout>
+  <!-- <div class="sidebar"> -->
+  <nz-sider
+    nzCollapsible
+    [(nzCollapsed)]="isCollapsed"
+    [nzTrigger]="null"
+    [nzWidth]="250"
+  >
+    <div class="logo"></div>
+    <ul nz-menu nzTheme="light" nzMode="inline">
+      <li nz-menu-item id="dashboard" nzSelected>
+        <span nz-icon nzType="dashboard" shape="square"></span>
+        <span>Dashboard</span>
+      </li>
+      <li nz-menu-group nzTitle="ORGANIZATION"></li>
+      <li nz-menu-item>
+        <span nz-icon nzType="employees"></span>
+        <span>Employees</span>
+      </li>
+      <li nz-menu-item>
+        <span nz-icon nzType="department"></span>
+        <span>Department</span>
+      </li>
+      <li nz-menu-item>
+        <span nz-icon nzType="file"></span>
+        <span>Position</span>
+      </li>
+      <li nz-menu-item>
+        <span nz-icon nzType="file"></span>
+        <span>Computers</span>
+      </li>
+      <li nz-menu-item>
+        <span nz-icon nzType="file"></span>
+        <span>Appraisal</span>
+      </li>
+      <li nz-menu-item>
+        <span nz-icon nzType="file"></span>
+        <span>Salary</span>
+      </li>
+      <li nz-menu-item>
+        <span nz-icon nzType="file"></span>
+        <span>Timesheet</span>
+      </li>
+      <li nz-menu-item>
+        <span nz-icon nzType="file"></span>
+        <span>Leave</span>
+      </li>
+      <li nz-menu-group nzTitle="WORKSPACE"></li>
+      <li nz-menu-item>
+        <span nz-icon nzType="file"></span>
+        <span>Expenses</span>
+      </li>
+    </ul>
+  </nz-sider>
+  <!-- </div> -->
+  <nz-layout>
+    <nz-header>
+      <span
+        class="trigger"
+        nz-icon
+        [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+        (click)="isCollapsed = !isCollapsed"
+      ></span>
+    </nz-header>
+    <nz-content>
+      <!-- <nz-breadcrumb>
+        <nz-breadcrumb-item>User</nz-breadcrumb-item>
+        <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
+      </nz-breadcrumb> -->
+      <div class="inner-content">Bill is a cat.</div>
+    </nz-content>
+    <!-- <nz-footer></nz-footer> -->
+  </nz-layout>
+</nz-layout>
