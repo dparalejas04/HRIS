@@ -1,4 +1,18 @@
+<!-- new position for header layout and able to add logo inside -->
 <nz-layout>
+  <nz-header>
+    <span
+      class="trigger"
+      nz-icon
+      [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+      (click)="isCollapsed = !isCollapsed"
+    ></span>
+  </nz-header>
+</nz-layout>
+<!-- ////////////////////////////////////////////// -->
+
+<nz-layout>
+  
   <!-- <div class="sidebar"> -->
   <nz-sider
     nzCollapsible
@@ -53,22 +67,16 @@
     </ul>
   </nz-sider>
   <!-- </div> -->
-  <nz-layout>
-    <nz-header>
-      <span
-        class="trigger"
-        nz-icon
-        [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-        (click)="isCollapsed = !isCollapsed"
-      ></span>
-    </nz-header>
-    <nz-content>
-      <!-- <nz-breadcrumb>
-        <nz-breadcrumb-item>User</nz-breadcrumb-item>
-        <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
-      </nz-breadcrumb> -->
-      <div class="inner-content">Bill is a cat.</div>
-    </nz-content>
-    <!-- <nz-footer></nz-footer> -->
-  </nz-layout>
+
+      <!-- the content would be responsive and attached to sidebar -->
+      <nz-content>
+        <!-- <nz-breadcrumb>
+          <nz-breadcrumb-item>User</nz-breadcrumb-item>
+          <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
+        </nz-breadcrumb> -->
+        <div class="inner-content">Bill is a cat.</div>
+      </nz-content>
+      <!-- <nz-footer></nz-footer> -->
+    
+
 </nz-layout>

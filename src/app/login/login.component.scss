@@ -257,7 +257,7 @@ button {
   height: auto;
   margin-left: 3px;
   padding: 0;
-  max-width: 1vw;
+  max-width: 20px;
   // position: absolute;
   transform: translate(-20px, 0px);
 }
@@ -273,11 +273,11 @@ button {
 }
 
 /* Media Query for Tablet */
-@media (min-width: 767px) and (max-width: 1023) {
+@media (min-width: 767px) and (max-width: 1023px) {
   .card {
     padding: 40px;
-    width: 50%;
-    min-width: 100vw;
+    width: 40%;
+    min-width: 80vw;
   }
 }
 
