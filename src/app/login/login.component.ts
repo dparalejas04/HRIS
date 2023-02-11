@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   loginValidate() {
-    this.router.navigateByUrl('/sidebar');
+    this.router.navigateByUrl('/dashboard');
   }
 
   viewpass() {
