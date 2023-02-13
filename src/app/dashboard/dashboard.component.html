@@ -1,5 +1,5 @@
 <!-- new position for header layout and able to add logo inside -->
-<nz-layout>
+<nz-layout class="header-layout">
   <nz-header>
     <span
       class="trigger"
@@ -7,76 +7,138 @@
       [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
       (click)="isCollapsed = !isCollapsed"
     ></span>
+    <span class="line-header">|</span>
+    <img src="/assets/Header-logo.png" alt="hris-logo" class="hris-logo" />
   </nz-header>
 </nz-layout>
 <!-- ////////////////////////////////////////////// -->
 
-<nz-layout>
-  
-  <!-- <div class="sidebar"> -->
+<nz-layout class="sidebar-layout">
   <nz-sider
     nzCollapsible
-    [(nzCollapsed)]="isCollapsed"
+    [(nzCollapsed)]="!isCollapsed"
     [nzTrigger]="null"
     [nzWidth]="250"
   >
-    <div class="logo"></div>
+    <!-- <div class="logo"></div> -->
     <ul nz-menu nzTheme="light" nzMode="inline">
       <li nz-menu-item id="dashboard" nzSelected>
-        <span nz-icon nzType="dashboard" shape="square"></span>
+        <!-- <span nz-icon nzType="dashboard" shape="square"></span> -->
+        <div class="sidemenu-logo-container">
+          <img
+            src="/assets/Sidebar assets/Default Icons/Dashboard-default.png"
+            alt="dash-logo"
+            class="sidemenu-logo"
+          />
+        </div>
         <span>Dashboard</span>
       </li>
       <li nz-menu-group nzTitle="ORGANIZATION"></li>
       <li nz-menu-item>
-        <span nz-icon nzType="employees"></span>
+        <!-- <span nz-icon nzType="employees"></span> -->
+        <div class="sidemenu-logo-container">
+          <img
+            src="/assets/Sidebar assets/Default Icons/Employees-default.png"
+            alt="emp-logo"
+            class="sidemenu-logo"
+          />
+        </div>
         <span>Employees</span>
       </li>
       <li nz-menu-item>
-        <span nz-icon nzType="department"></span>
+        <!-- <span nz-icon nzType="department"></span> -->
+        <div class="sidemenu-logo-container">
+          <img
+            src="/assets/Sidebar assets/Default Icons/Department-default.png"
+            alt="dept-logo"
+            class="sidemenu-logo"
+          />
+        </div>
         <span>Department</span>
       </li>
       <li nz-menu-item>
-        <span nz-icon nzType="file"></span>
+        <!-- <span nz-icon nzType="file"></span> -->
+        <div class="sidemenu-logo-container">
+          <img
+            src="/assets/Sidebar assets/Default Icons/Position-default.png"
+            alt="posi-logo"
+            class="sidemenu-logo"
+          />
+        </div>
         <span>Position</span>
       </li>
       <li nz-menu-item>
-        <span nz-icon nzType="file"></span>
+        <!-- <span nz-icon nzType="file"></span> -->
+        <div class="sidemenu-logo-container">
+          <img
+            src="/assets/Sidebar assets/Default Icons/Computers-default.png"
+            alt="comp-logo"
+            class="sidemenu-logo"
+          />
+        </div>
         <span>Computers</span>
       </li>
       <li nz-menu-item>
-        <span nz-icon nzType="file"></span>
+        <!-- <span nz-icon nzType="file"></span> -->
+        <div class="sidemenu-logo-container">
+          <img
+            src="/assets/Sidebar assets/Default Icons/Appraisal-default.png"
+            alt="appr-logo"
+            class="sidemenu-logo"
+          />
+        </div>
         <span>Appraisal</span>
       </li>
       <li nz-menu-item>
-        <span nz-icon nzType="file"></span>
+        <!-- <span nz-icon nzType="file"></span> -->
+        <div class="sidemenu-logo-container">
+          <img
+            src="/assets/Sidebar assets/Default Icons/Salary-default.png"
+            alt="sala-logo"
+            class="sidemenu-logo"
+          />
+        </div>
         <span>Salary</span>
       </li>
       <li nz-menu-item>
-        <span nz-icon nzType="file"></span>
+        <!-- <span nz-icon nzType="file"></span> -->
+        <div class="sidemenu-logo-container">
+          <img
+            src="/assets/Sidebar assets/Default Icons/Timesheet-default.png"
+            alt="time-logo"
+            class="sidemenu-logo"
+          />
+        </div>
         <span>Timesheet</span>
       </li>
       <li nz-menu-item>
-        <span nz-icon nzType="file"></span>
+        <!-- <span nz-icon nzType="file"></span> -->
+        <div class="sidemenu-logo-container">
+          <img
+            src="/assets/Sidebar assets/Default Icons/Leave-default.png"
+            alt="leav-logo"
+            class="sidemenu-logo"
+          />
+        </div>
         <span>Leave</span>
       </li>
       <li nz-menu-group nzTitle="WORKSPACE"></li>
       <li nz-menu-item>
-        <span nz-icon nzType="file"></span>
+        <!-- <span nz-icon nzType="file"></span> -->
+        <div class="sidemenu-logo-container">
+          <img
+            src="/assets/Sidebar assets/Default Icons/Expenses-default.png"
+            alt="Expe-logo"
+            class="sidemenu-logo"
+          />
+        </div>
         <span>Expenses</span>
       </li>
     </ul>
   </nz-sider>
-  <!-- </div> -->
 
-      <!-- the content would be responsive and attached to sidebar -->
-      <nz-content>
-        <!-- <nz-breadcrumb>
-          <nz-breadcrumb-item>User</nz-breadcrumb-item>
-          <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
-        </nz-breadcrumb> -->
-        <div class="inner-content">Bill is a cat.</div>
-      </nz-content>
-      <!-- <nz-footer></nz-footer> -->
-    
-
+  <!-- the content would be responsive and attached to sidebar -->
+  <nz-content class="body-content">
+    <div class="inner-content">Bill is a cat.</div>
+  </nz-content>
 </nz-layout>
