@@ -1,4 +1,4 @@
-<!-- new position for header layout and able to add logo inside -->
+<!-- HEADER -->
 <nz-layout class="header-layout">
   <nz-header>
     <span
@@ -9,10 +9,15 @@
     ></span>
     <span class="line-header">|</span>
     <img src="/assets/Header-logo.png" alt="hris-logo" class="hris-logo" />
+    <div class="acc-container">
+      <img src="/assets/Office-Manager.png" alt="picture" class="acc-pic" />
+      <span class="acc-name">Office Manager</span>
+    </div>
   </nz-header>
 </nz-layout>
 <!-- ////////////////////////////////////////////// -->
 
+<!-- SIDEBAR -->
 <nz-layout class="sidebar-layout">
   <nz-sider
     nzCollapsible
@@ -20,125 +25,158 @@
     [nzTrigger]="null"
     [nzWidth]="250"
   >
-    <!-- <div class="logo"></div> -->
     <ul nz-menu nzTheme="light" nzMode="inline">
       <li nz-menu-item id="dashboard" nzSelected>
         <!-- <span nz-icon nzType="dashboard" shape="square"></span> -->
         <div class="sidemenu-logo-container">
-          <img
-            src="/assets/Sidebar assets/Default Icons/Dashboard-default.png"
-            alt="dash-logo"
-            class="sidemenu-logo"
-          />
+          <div class="dashboard-logo" (click)="select('dashboard')">
+            <img
+              *ngIf="!sample.dashboard"
+              src="/assets/Sidebar-assets/Default-Icons/Dashboard-default.png"
+              alt="dash-logo"
+              class="dashboard-logo"
+            />
+
+            <img
+              *ngIf="sample.dashboard"
+              src="/assets/Sidebar-assets/Active-Icons/Dashboard.png"
+              alt="dash-logo"
+              class="dashboard-logo"
+            />
+          </div>
         </div>
-        <span>Dashboard</span>
+        <span class="menu-label">Dashboard</span>
       </li>
       <li nz-menu-group nzTitle="ORGANIZATION"></li>
       <li nz-menu-item>
         <!-- <span nz-icon nzType="employees"></span> -->
-        <div class="sidemenu-logo-container">
+        <div class="sidemenu-logo-container" (click)="select('employees')">
           <img
-            src="/assets/Sidebar assets/Default Icons/Employees-default.png"
+            *ngIf="!sample.employees"
+            src="/assets/Sidebar-assets/Default-Icons/Employees-default.png"
             alt="emp-logo"
-            class="sidemenu-logo"
+            class="employee-logo"
+          />
+
+          <img
+            *ngIf="sample.employees"
+            src="/assets/Sidebar-assets/Active-Icons/Employees.png"
+            alt="emp-logo"
+            class="employee-logo"
           />
         </div>
-        <span>Employees</span>
+        <span class="menu-label">Employees</span>
       </li>
       <li nz-menu-item>
         <!-- <span nz-icon nzType="department"></span> -->
         <div class="sidemenu-logo-container">
           <img
-            src="/assets/Sidebar assets/Default Icons/Department-default.png"
+            src="/assets/Sidebar-assets/Default-Icons/Department-default.png"
             alt="dept-logo"
-            class="sidemenu-logo"
+            class="department-logo"
           />
         </div>
-        <span>Department</span>
+        <span class="menu-label">Department</span>
       </li>
       <li nz-menu-item>
         <!-- <span nz-icon nzType="file"></span> -->
         <div class="sidemenu-logo-container">
           <img
-            src="/assets/Sidebar assets/Default Icons/Position-default.png"
+            src="/assets/Sidebar-assets/Default-Icons/Position-default.png"
             alt="posi-logo"
-            class="sidemenu-logo"
+            class="position-logo"
           />
         </div>
-        <span>Position</span>
+        <span class="menu-label">Position</span>
       </li>
       <li nz-menu-item>
         <!-- <span nz-icon nzType="file"></span> -->
         <div class="sidemenu-logo-container">
           <img
-            src="/assets/Sidebar assets/Default Icons/Computers-default.png"
+            src="/assets/Sidebar-assets/Default-Icons/Computers-default.png"
             alt="comp-logo"
-            class="sidemenu-logo"
+            class="computers-logo"
           />
         </div>
-        <span>Computers</span>
+        <span class="menu-label">Computers</span>
       </li>
       <li nz-menu-item>
         <!-- <span nz-icon nzType="file"></span> -->
         <div class="sidemenu-logo-container">
           <img
-            src="/assets/Sidebar assets/Default Icons/Appraisal-default.png"
+            src="/assets/Sidebar-assets/Default-Icons/Appraisal-default.png"
             alt="appr-logo"
-            class="sidemenu-logo"
+            class="appraisal-logo"
           />
         </div>
-        <span>Appraisal</span>
+        <span class="menu-label">Appraisal</span>
       </li>
       <li nz-menu-item>
         <!-- <span nz-icon nzType="file"></span> -->
         <div class="sidemenu-logo-container">
           <img
-            src="/assets/Sidebar assets/Default Icons/Salary-default.png"
+            src="/assets/Sidebar-assets/Default-Icons/Salary-default.png"
             alt="sala-logo"
-            class="sidemenu-logo"
+            class="salary-logo"
           />
         </div>
-        <span>Salary</span>
+        <span class="menu-label">Salary</span>
       </li>
       <li nz-menu-item>
         <!-- <span nz-icon nzType="file"></span> -->
         <div class="sidemenu-logo-container">
           <img
-            src="/assets/Sidebar assets/Default Icons/Timesheet-default.png"
+            src="/assets/Sidebar-assets/Default-Icons/Timesheet-default.png"
             alt="time-logo"
-            class="sidemenu-logo"
+            class="timesheet-logo"
           />
         </div>
-        <span>Timesheet</span>
+        <span class="menu-label">Timesheet</span>
       </li>
       <li nz-menu-item>
         <!-- <span nz-icon nzType="file"></span> -->
         <div class="sidemenu-logo-container">
           <img
-            src="/assets/Sidebar assets/Default Icons/Leave-default.png"
+            src="/assets/Sidebar-assets/Default-Icons/Leave-default.png"
             alt="leav-logo"
-            class="sidemenu-logo"
+            class="leave-logo"
           />
         </div>
-        <span>Leave</span>
+        <span class="menu-label">Leave</span>
       </li>
       <li nz-menu-group nzTitle="WORKSPACE"></li>
       <li nz-menu-item>
         <!-- <span nz-icon nzType="file"></span> -->
         <div class="sidemenu-logo-container">
           <img
-            src="/assets/Sidebar assets/Default Icons/Expenses-default.png"
+            src="/assets/Sidebar-assets/Default-Icons/Expenses-default.png"
             alt="Expe-logo"
-            class="sidemenu-logo"
+            class="expenses-logo"
           />
         </div>
-        <span>Expenses</span>
+        <span class="menu-label">Expenses</span>
       </li>
     </ul>
   </nz-sider>
 
   <!-- the content would be responsive and attached to sidebar -->
   <nz-content class="body-content">
-    <div class="inner-content">Bill is a cat.</div>
+    <div class="inner-content">
+      <div class="total-employees-container">
+        <span>total employees</span>
+      </div>
+      <div class="present-employees-container">
+        <span>present employees</span>
+      </div>
+      <div class="absent-employees-container">
+        <span>absent employees</span>
+      </div>
+      <div class="late-employees-container">
+        <span>late employees</span>
+      </div>
+      <div class="onleave-employees-container">
+        <span>onleave employees</span>
+      </div>
+    </div>
   </nz-content>
 </nz-layout>
