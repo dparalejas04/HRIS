@@ -92,7 +92,7 @@ nz-header {
 
 .inner-content {
   margin: 20px;
-  padding: 25px;
+  padding: 20px;
   background: #fff;
   height: 100%;
   max-height: 86.5vh;
@@ -101,6 +101,9 @@ nz-header {
   box-shadow: 0px 2px 4px rgb(0 0 0 / 25%);
   flex-direction: row;
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: stretch;
 }
 
 // NZ-MENU-GROUP \\
@@ -147,59 +150,14 @@ nz-header {
   background-size: contain;
 }
 
-.dashboard-logo {
-  max-width: 30px;
-  background-size: contain;
-}
-
-.employee-logo {
-  max-width: 30px;
-  background-size: contain;
-}
-
-.department-logo {
-  max-width: 30px;
-  background-size: contain;
-}
-
-.position-logo {
-  max-width: 30px;
-  background-size: contain;
-}
-
-.computers-logo {
-  max-width: 30px;
-  background-size: contain;
-}
-
-.appraisal-logo {
-  max-width: 30px;
-  background-size: contain;
-}
-
-.salary-logo {
-  max-width: 30px;
-  background-size: contain;
-}
-
-.timesheet-logo {
-  max-width: 30px;
-  background-size: contain;
-}
-
-.leave-logo {
-  max-width: 30px;
-  background-size: contain;
-}
-
-.expenses-logo {
+.sidebar-logo {
   max-width: 30px;
   background-size: contain;
 }
 
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
   background: url(/assets/Sidebar-assets/SideMenu-bg.png);
-  background-size: 250px 45px;
+  background-size: 215px 45px;
   background-repeat: no-repeat;
   background-position: right;
   color: white;
@@ -289,3 +247,134 @@ nz-header {
 //   // padding: 0;
 //   // flex-direction: row;
 // }
+
+// .total-employees-container {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   flex-wrap: nowrap;
+//   background-color: white;
+//   max-width: 15.3822916667vw;
+//   // padding-left: 20px;
+//   max-height: 21.4681440443vh;
+//   width: 100%;
+//   height: 100%;
+//   border-radius: 15px;
+//   box-shadow: 0px 1px 10px rgb(0 0 0 / 25%);
+//   // margin-right: 20px;
+//   align-items: center;
+// }
+
+// .present-employees-container {
+//   display: flex;
+//   align-items: baseline;
+//   flex-direction: column;
+//   justify-content: center;
+//   flex-wrap: wrap;
+//   align-content: center;
+//   background-color: white;
+//   max-width: 15.382291666666667vw;
+//   max-height: 21.46814404432133vh;
+//   width: 100%;
+//   height: 100%;
+//   border-radius: 15px;
+//   box-shadow: 0px 1px 10px rgb(0 0 0 / 25%);
+//   // margin-right: 20px;
+// }
+
+// .absent-employees-container {
+//   display: flex;
+//   align-items: baseline;
+//   flex-direction: column;
+//   justify-content: center;
+//   flex-wrap: wrap;
+//   align-content: center;
+//   background-color: white;
+//   max-width: 15.382291666666667vw;
+//   max-height: 21.46814404432133vh;
+//   width: 100%;
+//   height: 100%;
+//   border-radius: 15px;
+//   box-shadow: 0px 1px 10px rgb(0 0 0 / 25%);
+//   // margin-right: 20px;
+// }
+
+// .late-employees-container {
+//   display: flex;
+//   align-items: baseline;
+//   flex-direction: column;
+//   justify-content: center;
+//   flex-wrap: wrap;
+//   align-content: center;
+//   background-color: white;
+//   max-width: 15.382291666666667vw;
+//   max-height: 21.46814404432133vh;
+//   width: 100%;
+//   height: 100%;
+//   border-radius: 15px;
+//   box-shadow: 0px 1px 10px rgb(0 0 0 / 25%);
+//   // margin-right: 20px;
+// }
+
+// .onleave-employees-container {
+//   display: flex;
+//   align-items: baseline;
+//   flex-direction: column;
+//   justify-content: center;
+//   flex-wrap: wrap;
+//   align-content: center;
+//   background-color: white;
+//   max-width: 15.382291666666667vw;
+//   max-height: 21.46814404432133vh;
+//   width: 100%;
+//   height: 100%;
+//   border-radius: 15px;
+//   box-shadow: 0px 1px 10px rgb(0 0 0 / 25%);
+// }
+
+// .total-container {
+//   display: flex;
+//   align-items: center;
+//   position: absolute;
+//   margin-right: 10px;
+//   transform: translate(-72px, 0px);
+// }
+
+.card {
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  background-color: white;
+  max-width: 15.3822916667vw;
+  max-height: 21.4681440443vh;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  box-shadow: 0px 1px 10px rgb(0 0 0 / 25%);
+}
+
+.icons {
+  width: 65px;
+  // position: absolute;
+  margin-right: 5px;
+  // transform: translate(-72px, 0px);
+}
+
+.card-title {
+  text-transform: uppercase;
+  font-size: 13px;
+  font-family: HELVETICABOLD;
+  color: #7d7c7c;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.number {
+  font-size: 25px;
+  font-family: HELVETICABOLD;
+}

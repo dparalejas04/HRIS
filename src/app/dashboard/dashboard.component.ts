@@ -11,36 +11,78 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  // sample: boolean = false;
-
-  sample: any = {
+  navigate: any = {
     dashboard: true,
     employees: false,
+    department: false,
+    position: false,
+    computers: false,
+    appraisal: false,
+    salary: false,
+    timesheet: false,
+    leave: false,
+    expenses: false,
   };
 
-  public select(sample: string) {
-    this.sample = !this.sample;
+  public select(navigate: string) {
+    for (const key in this.navigate) {
+      this.navigate[key] = false;
+    }
 
-    switch (sample) {
+    // switch (navigate) {
+    //   case 'dashboard': {
+    //     //statements;
+    //     this.navigate.dashboard = true;
+    //     break;
+    //   }
+    //   default: {
+    //     this.navigate.employees = true;
+    //     break;
+    //   }
+    // }
+
+    switch (navigate) {
       case 'dashboard': {
-        alert();
         //statements;
-        for (const key in this.sample) {
-          this.sample[key] = false;
-        }
-
-        this.sample.dashboard = true;
+        this.navigate.dashboard = true;
         break;
       }
-      default: {
-        this.setAllValuesToFalse();
-        this.sample.employees = true;
+      case 'employees': {
+        this.navigate.employees = true;
+        break;
+      }
+      case 'department': {
+        this.navigate.department = true;
+        break;
+      }
+      case 'position': {
+        this.navigate.position = true;
+        break;
+      }
+      case 'computers': {
+        this.navigate.computers = true;
+        break;
+      }
+      case 'appraisal': {
+        this.navigate.appraisal = true;
+        break;
+      }
+      case 'salary': {
+        this.navigate.salary = true;
+        break;
+      }
+      case 'timesheet': {
+        this.navigate.timesheet = true;
+        break;
+      }
+      case 'leave': {
+        this.navigate.leave = true;
+        break;
+      }
+      case 'expenses': {
+        this.navigate.expenses = true;
         break;
       }
     }
-  }
-
-  setAllValuesToFalse(): void {
-    this.sample.dashboard = false;
   }
 }
