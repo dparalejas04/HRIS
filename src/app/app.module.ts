@@ -8,8 +8,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DemoNgZorroAntdModule } from './ng-zorro-antd.module';
+import { EmployeesModule } from './employees/employees.module';
 import { FormsModule } from '@angular/forms';
-import { HomeModule } from './home/home.module';
 import { HttpClientModule } from '@angular/common/http';
 import { IconDefinition } from '@ant-design/icons-angular';
 import { IconsProviderModule } from './icons-provider.module';
@@ -42,7 +42,7 @@ registerLocaleData(en);
     NzMenuModule,
 
     DemoNgZorroAntdModule,
-    HomeModule,
+    EmployeesModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],

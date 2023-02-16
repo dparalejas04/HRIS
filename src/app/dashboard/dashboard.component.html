@@ -8,10 +8,29 @@
       (click)="isCollapsed = !isCollapsed"
     ></span>
     <span class="line-header">|</span>
-    <img src="/assets/Header-logo.png" alt="hris-logo" class="hris-logo" />
-    <div class="acc-container">
-      <img src="/assets/Office-Manager.png" alt="picture" class="acc-pic" />
+    <img
+      src="/assets/Dashboard-assets/Header-logo.png"
+      alt="hris-logo"
+      class="hris-logo"
+    />
+    <div
+      class="acc-container"
+      nz-button
+      nz-popover
+      [(nzPopoverVisible)]="visible"
+      (nzPopoverVisibleChange)="change($event)"
+      nzPopoverTrigger="click"
+      [nzPopoverContent]="contentTemplate"
+    >
+      <img
+        src="/assets/Dashboard-assets/Office-Manager.png"
+        alt="picture"
+        class="acc-pic"
+      />
       <span class="acc-name">Office Manager</span>
+      <ng-template #contentTemplate>
+        <a (click)="signOut()">Sign out</a>
+      </ng-template>
     </div>
   </nz-header>
 </nz-layout>
@@ -27,7 +46,6 @@
   >
     <ul nz-menu nzTheme="light" nzMode="inline">
       <li nz-menu-item id="dashboard" nzSelected (click)="select('dashboard')">
-        <!-- <span nz-icon nzType="dashboard" shape="square"></span> -->
         <div class="sidemenu-logo-container">
           <div class="dashboard-logo">
             <img
@@ -49,7 +67,6 @@
       </li>
       <li nz-menu-group nzTitle="ORGANIZATION"></li>
       <li nz-menu-item (click)="select('employees')">
-        <!-- <span nz-icon nzType="employees"></span> -->
         <div class="sidemenu-logo-container">
           <img
             *ngIf="!navigate.employees"
@@ -68,7 +85,6 @@
         <span class="menu-label">Employees</span>
       </li>
       <li nz-menu-item (click)="select('department')">
-        <!-- <span nz-icon nzType="department"></span> -->
         <div class="sidemenu-logo-container">
           <img
             *ngIf="!navigate.department"
@@ -87,7 +103,6 @@
         <span class="menu-label">Department</span>
       </li>
       <li nz-menu-item (click)="select('position')">
-        <!-- <span nz-icon nzType="file"></span> -->
         <div class="sidemenu-logo-container">
           <img
             *ngIf="!navigate.position"
@@ -106,7 +121,6 @@
         <span class="menu-label">Position</span>
       </li>
       <li nz-menu-item (click)="select('computers')">
-        <!-- <span nz-icon nzType="file"></span> -->
         <div class="sidemenu-logo-container">
           <img
             *ngIf="!navigate.computers"
@@ -125,7 +139,6 @@
         <span class="menu-label">Computers</span>
       </li>
       <li nz-menu-item (click)="select('appraisal')">
-        <!-- <span nz-icon nzType="file"></span> -->
         <div class="sidemenu-logo-container">
           <img
             *ngIf="!navigate.appraisal"
@@ -144,7 +157,6 @@
         <span class="menu-label">Appraisal</span>
       </li>
       <li nz-menu-item (click)="select('salary')">
-        <!-- <span nz-icon nzType="file"></span> -->
         <div class="sidemenu-logo-container">
           <img
             *ngIf="!navigate.salary"
@@ -163,7 +175,6 @@
         <span class="menu-label">Salary</span>
       </li>
       <li nz-menu-item (click)="select('timesheet')">
-        <!-- <span nz-icon nzType="file"></span> -->
         <div class="sidemenu-logo-container">
           <img
             *ngIf="!navigate.timesheet"
@@ -182,7 +193,6 @@
         <span class="menu-label">Timesheet</span>
       </li>
       <li nz-menu-item (click)="select('leave')">
-        <!-- <span nz-icon nzType="file"></span> -->
         <div class="sidemenu-logo-container">
           <img
             *ngIf="!navigate.leave"
@@ -202,7 +212,6 @@
       </li>
       <li nz-menu-group nzTitle="WORKSPACE"></li>
       <li nz-menu-item (click)="select('expenses')">
-        <!-- <span nz-icon nzType="file"></span> -->
         <div class="sidemenu-logo-container">
           <img
             *ngIf="!navigate.expenses"
@@ -223,7 +232,7 @@
     </ul>
   </nz-sider>
 
-  <!-- the content would be responsive and attached to sidebar -->
+  <!-- CONTENT  -->
   <nz-content class="body-content">
     <div class="inner-content">
       <div class="card">
@@ -281,16 +290,62 @@
           <span class="card-title">On Leave</span>
         </div>
       </div>
+      <!-- ///////////////////////////////////////////////////////////// -->
 
-      <!-- <div class="lower-container"> -->
+      <!-- ANNOUNCEMENTS & EVENTS TAB -->
       <div class="event-container">
-        <span>Announcement</span>
+        <!-- <div class="tabs-container">
+          <span class="tabs">Announcement</span>
+          <span class="tabs">Events</span>
+        </div> -->
+
+        <nz-tabset
+          (nzSelectChange)="test()"
+          [nzTabBarExtraContent]="extraTemplate"
+          nzSize="small"
+        >
+          <!-- <nz-tab *ngFor="let tab of tabs" [nzTitle]="tab"> -->
+
+          <nz-tab [nzTitle]="'Announcement'">
+            <h1>Announcement</h1>
+          </nz-tab>
+
+          <nz-tab [nzTitle]="'Events'">
+            <nz-carousel *ngIf="reinitTab" nzAutoPlay [nzEffect]="'fade'">
+              <div nz-carousel-content *ngFor="let index of array">
+                <h3>{{ index }}</h3>
+              </div>
+            </nz-carousel>
+          </nz-tab>
+
+          <!-- </nz-tab> -->
+        </nz-tabset>
+
+        <!-- ACTION BUTTONS -->
+        <ng-template #extraTemplate>
+          <button nz-button id="add-button">
+            <span nz-icon nzType="plus" nzTheme="outline"></span>ADD
+          </button>
+          <button nz-button>
+            <img
+              src="/assets/Dashboard-assets/Tabs/settings.png"
+              alt="settings"
+              class="tab-setting"
+            />
+          </button>
+        </ng-template>
+
+        <!-- <nz-carousel nzAutoPlay [nzEffect]="'fade'">
+          <div nz-carousel-content *ngFor="let index of array">
+            <h3>{{ index }}</h3>
+          </div>
+        </nz-carousel> -->
       </div>
 
+      <!-- BIRTHDAY, ANNIVERSARY AND HOLIDAY TAB -->
       <div class="occasion-container">
         <span>Birthday</span>
       </div>
-      <!-- </div> -->
     </div>
   </nz-content>
 </nz-layout>

@@ -1,3 +1,4 @@
+// >> HEADER << \\
 .header-layout {
   width: 100%;
   height: 100%;
@@ -34,22 +35,18 @@ nz-header {
 
 .hris-logo {
   width: 100%;
-  max-width: 150px;
+  // max-width: 150px;
+  max-width: 175px;
   position: absolute;
   transform: translate(75px, 0px);
 }
 
+// HEADER >> ACCOUNT \\
 .acc-container {
   display: flex;
   align-self: flex-end;
   align-items: center;
   justify-content: flex-end;
-  // flex-direction: row;
-  // flex-wrap: nowrap;
-  /* width: 100%; */
-  /* width: 13vw; */
-  /* height: auto; */
-  /* left: 87%; */
   cursor: pointer;
   transform: translate(86.3vw, 0vh);
   position: absolute;
@@ -77,6 +74,7 @@ nz-header {
   align-items: center;
 }
 
+// BURGER MENU \\
 .trigger {
   font-size: 18px;
   line-height: 64px;
@@ -89,22 +87,9 @@ nz-header {
 .trigger:hover {
   color: #b30938;
 }
+///////////////////////////////////
 
-.inner-content {
-  margin: 20px;
-  padding: 20px;
-  background: #fff;
-  height: 100%;
-  max-height: 86.5vh;
-  width: 97%;
-  border-radius: 15px;
-  box-shadow: 0px 2px 4px rgb(0 0 0 / 25%);
-  flex-direction: row;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-content: stretch;
-}
+// >> SIDEBAR << \\
 
 // NZ-MENU-GROUP \\
 .ant-menu-item-group-title {
@@ -239,106 +224,22 @@ nz-header {
   flex-direction: row;
 }
 
-// .sidebar-layout {
-//   width: 100%;
-//   height: 100%;
-//   // max-height: 91.1vh;
-//   // margin: 0;
-//   // padding: 0;
-//   // flex-direction: row;
-// }
-
-// .total-employees-container {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   flex-wrap: nowrap;
-//   background-color: white;
-//   max-width: 15.3822916667vw;
-//   // padding-left: 20px;
-//   max-height: 21.4681440443vh;
-//   width: 100%;
-//   height: 100%;
-//   border-radius: 15px;
-//   box-shadow: 0px 1px 10px rgb(0 0 0 / 25%);
-//   // margin-right: 20px;
-//   align-items: center;
-// }
-
-// .present-employees-container {
-//   display: flex;
-//   align-items: baseline;
-//   flex-direction: column;
-//   justify-content: center;
-//   flex-wrap: wrap;
-//   align-content: center;
-//   background-color: white;
-//   max-width: 15.382291666666667vw;
-//   max-height: 21.46814404432133vh;
-//   width: 100%;
-//   height: 100%;
-//   border-radius: 15px;
-//   box-shadow: 0px 1px 10px rgb(0 0 0 / 25%);
-//   // margin-right: 20px;
-// }
-
-// .absent-employees-container {
-//   display: flex;
-//   align-items: baseline;
-//   flex-direction: column;
-//   justify-content: center;
-//   flex-wrap: wrap;
-//   align-content: center;
-//   background-color: white;
-//   max-width: 15.382291666666667vw;
-//   max-height: 21.46814404432133vh;
-//   width: 100%;
-//   height: 100%;
-//   border-radius: 15px;
-//   box-shadow: 0px 1px 10px rgb(0 0 0 / 25%);
-//   // margin-right: 20px;
-// }
-
-// .late-employees-container {
-//   display: flex;
-//   align-items: baseline;
-//   flex-direction: column;
-//   justify-content: center;
-//   flex-wrap: wrap;
-//   align-content: center;
-//   background-color: white;
-//   max-width: 15.382291666666667vw;
-//   max-height: 21.46814404432133vh;
-//   width: 100%;
-//   height: 100%;
-//   border-radius: 15px;
-//   box-shadow: 0px 1px 10px rgb(0 0 0 / 25%);
-//   // margin-right: 20px;
-// }
-
-// .onleave-employees-container {
-//   display: flex;
-//   align-items: baseline;
-//   flex-direction: column;
-//   justify-content: center;
-//   flex-wrap: wrap;
-//   align-content: center;
-//   background-color: white;
-//   max-width: 15.382291666666667vw;
-//   max-height: 21.46814404432133vh;
-//   width: 100%;
-//   height: 100%;
-//   border-radius: 15px;
-//   box-shadow: 0px 1px 10px rgb(0 0 0 / 25%);
-// }
-
-// .total-container {
-//   display: flex;
-//   align-items: center;
-//   position: absolute;
-//   margin-right: 10px;
-//   transform: translate(-72px, 0px);
-// }
+// >> BODY / CONTENT << \\
+.inner-content {
+  margin: 20px;
+  padding: 20px;
+  background: #fff;
+  height: 100%;
+  max-height: 86.5vh;
+  width: 97%;
+  border-radius: 15px;
+  box-shadow: 0px 2px 4px rgb(0 0 0 / 25%);
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: stretch;
+}
 
 .card {
   display: flex;
@@ -357,9 +258,7 @@ nz-header {
 
 .icons {
   width: 65px;
-  // position: absolute;
   margin-right: 5px;
-  // transform: translate(-72px, 0px);
 }
 
 .card-title {
@@ -378,3 +277,74 @@ nz-header {
   font-size: 25px;
   font-family: HELVETICABOLD;
 }
+
+.event-container {
+  display: flex;
+  background-color: white;
+  max-width: 48.1vw;
+  margin-top: 20px;
+  padding: 20px;
+  width: 60%;
+  height: 70%;
+  border-radius: 15px;
+  box-shadow: 0px 1px 10px rgb(0 0 0 / 25%);
+  flex-direction: column;
+}
+
+// Carousel \\
+[nz-carousel-content] {
+  text-align: center;
+  height: 100%;
+  line-height: 347px;
+  background: #364d79;
+  color: #fff;
+  overflow: hidden;
+}
+
+h3 {
+  color: #fff;
+  margin-bottom: 0;
+  user-select: none;
+}
+
+.occasion-container {
+  display: flex;
+  border-radius: 15px;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0px 1px 10px rgb(0 0 0 / 25%);
+  flex-direction: column;
+  width: 40%;
+  max-width: 31.7vw;
+}
+
+// .tabs-container {
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: flex-start;
+//   align-items: center;
+// }
+
+// .tabs {
+// }
+
+//temporary setting
+.tab-setting {
+  width: 20px;
+  position: inherit;
+  top: -2px;
+  left: 0;
+}
+
+// #add-button {
+//   background: url("/assets/Dashboard-assets/Tabs/add.png") no-repeat;
+//   background-size: contain;
+//   background-position: 97%;
+//   background-position: center;
+// }
+
+.carousel {
+  margin-top: 20px;
+}
+//////////////////////////////////

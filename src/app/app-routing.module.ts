@@ -1,7 +1,7 @@
 import { RouterModule, Routes } from '@angular/router';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { HomeComponent } from './home/home.component';
+import { EmployeesComponent } from './employees/employees.component';
 import { NgModule } from '@angular/core';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
@@ -14,10 +14,12 @@ const routes: Routes = [
   },
 
   {
-    path: 'home',
-    component: HomeComponent,
-    // loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
+    path: 'employees',
+    component: EmployeesComponent,
+    loadChildren: () =>
+      import('./employees/employees.module').then((m) => m.EmployeesModule),
   },
+
   {
     path: 'sidebar',
     component: SidebarComponent,

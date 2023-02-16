@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -7,7 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
   isCollapsed = true;
-  constructor() {}
+  visible: boolean = false;
+  tabs = ['Announcements', 'Events'];
+  array = [1, 2, 3, 4];
+  reinitTab = false;
+  // currentTabindex = 0;
+
+  constructor(private router: Router) {}
+
+  test(): void {
+    this.reinitTab = true;
+  }
+  signOut(): void {
+    this.router.navigateByUrl('/login');
+  }
+
+  // changeTabindex(index: number) {
+  //   // this.currentTabindex = index;
+  // }
 
   ngOnInit(): void {}
 
@@ -24,22 +43,14 @@ export class DashboardComponent implements OnInit {
     expenses: false,
   };
 
+  change(value: boolean): void {
+    console.log(value);
+  }
+
   public select(navigate: string) {
     for (const key in this.navigate) {
       this.navigate[key] = false;
     }
-
-    // switch (navigate) {
-    //   case 'dashboard': {
-    //     //statements;
-    //     this.navigate.dashboard = true;
-    //     break;
-    //   }
-    //   default: {
-    //     this.navigate.employees = true;
-    //     break;
-    //   }
-    // }
 
     switch (navigate) {
       case 'dashboard': {
