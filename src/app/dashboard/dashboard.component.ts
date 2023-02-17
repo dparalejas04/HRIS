@@ -10,14 +10,25 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
   isCollapsed = true;
   visible: boolean = false;
-  tabs = ['Announcements', 'Events'];
   array = [1, 2, 3, 4];
   reinitTab = false;
+  activeTab = 1;
+  // tabs = ['Announcements', 'Events'];
   // currentTabindex = 0;
+
+  imageUrls = [
+    '/assets/Dashboard-assets/Events/reader.png',
+    '/assets/Dashboard-assets/Events/iaapa.jpg',
+    '/assets/Dashboard-assets/Events/event.jpg',
+  ];
 
   constructor(private router: Router) {}
 
-  test(): void {
+  setActiveTab(index: number) {
+    this.activeTab = index;
+  }
+
+  eventChange(): void {
     this.reinitTab = true;
   }
   signOut(): void {
