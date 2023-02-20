@@ -1,28 +1,216 @@
-.header-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-content: flex-start;
-  width: 100%;
-  height: 100%;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-  align-items: center;
-  box-shadow: 0px 2px 4px rgb(0 0 0 / 25%);
-  background: white;
-  max-height: 8.537886872998932vh;
-}
+// >> HEADER << \\
 
-.wrapper {
-  //   position: absolute;
-  //   transform: translate(-42vw, 10vh);
-  //   width: 100%;
-  //   max-width: 17vw;
-
-  height: 100%;
+.ant-layout-header {
+  height: 60px;
+  padding: 0 15px 0 0;
+  color: rgba(0, 0, 0, 0.85);
+  line-height: 60px;
   background: #fff;
-  color: #fff;
-  overflow-y: auto;
-  width: 100%;
-  max-width: 17vw;
 }
+
+.line-header {
+  color: #efefef;
+  font-size: 30px;
+  position: fixed;
+  left: 60px;
+  top: -5px;
+}
+
+nz-header {
+  background: #fff;
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 15px 0 0;
+  height: 60px;
+  width: 100%;
+  box-shadow: 0px 2px 4px rgb(0 0 0 / 25%);
+  flex-direction: column;
+  align-content: space-between;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.hris-logo {
+  width: 100%;
+  max-width: 160px;
+  position: fixed;
+  left: 80px;
+}
+
+// HEADER >> ACCOUNT \\
+.acc-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-direction: row;
+}
+
+.acc-pic {
+  width: 100%;
+  margin-right: 10px;
+  max-width: 40px;
+  border: 2px solid #bcc3cc;
+  border-radius: 30px;
+}
+
+.acc-name {
+  width: 120px;
+  font-size: 14px;
+  font-family: Helvetica;
+  overflow: visible;
+}
+
+// BURGER MENU \\
+.trigger {
+  font-size: 18px;
+  line-height: 60px;
+  padding: 0 20px;
+  cursor: pointer;
+  transition: color 0.3s;
+  color: #838a92;
+}
+
+.trigger:hover {
+  color: #b30938;
+}
+///////////////////////////////////
+
+// >> SIDEBAR << \\
+
+nz-sider {
+  margin-top: 20px;
+}
+
+::ng-deep .ant-menu-item {
+  padding: 0 15px 0 15px !important;
+}
+
+// NZ-MENU-GROUP \\
+.ant-menu-item-group-title {
+  padding: 9px 15px;
+  color: #aab0b8;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5715;
+  transition: all 0.3s;
+  font-family: helvetica;
+  height: 35px;
+  cursor: default;
+}
+/////////////////////
+
+.ant-layout {
+  background: #fcf6f5;
+}
+
+.ant-layout-sider {
+  height: 100vh;
+  max-height: 100vh;
+  top: 60px;
+  position: fixed;
+  // margin-top: 20px;
+  // padding-top: 0px;
+  background-color: #fff;
+  box-shadow: 0px 1px 10px rgb(0 0 0 / 25%);
+  border-radius: 0px 15px 0px 0px;
+}
+
+.menu-label {
+  font-family: "Helvetica Neue", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.sidemenu-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0;
+  margin-right: 18px;
+  max-width: 30px;
+  background-size: contain;
+}
+
+.sidebar-logo {
+  max-width: 30px;
+  background-size: contain;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background: url(/assets/Sidebar-assets/SideMenu-bg.png);
+  background-size: 215px 45px;
+  background-repeat: no-repeat;
+  background-position: right;
+  color: white;
+}
+
+.ant-menu-inline .ant-menu-item {
+  margin-top: 0px;
+}
+
+.ant-menu-inline .ant-menu-item::after {
+  border-right: 0px;
+}
+
+.ant-layout-sider-collapsed {
+  flex: 0 0 100px !important;
+  max-width: 80px !important;
+  min-width: 80px !important;
+  width: 80px !important;
+}
+
+#dashboard {
+  border-radius: 0px 15px 0px 0px;
+}
+
+.ant-menu {
+  border-radius: 0px 15px 0px 0px;
+  /* box-shadow: 0 3px 6px -4px rgb(0 0 0 / 12%), 0 6px 16px 0 rgb(0 0 0 / 8%), 0 9px 28px 8px rgb(0 0 0 / 5%); */
+  box-shadow: 0px;
+}
+
+// When a certain menu is Active
+// .ant-menu-inline {
+//   border-right: 0px !important;
+// }
+
+.ant-layout.ant-layout-has-sider {
+  width: 100%;
+  height: 100%;
+  // flex-direction: row;
+}
+
+// .ant-layout-sider {
+//   flex: 0 0 300px !important;
+//   max-width: 300px !important;
+//   min-width: 100px !important;
+//   width: 250px !important;
+// }
+
+// //NOT COLLAPSED
+// .ant-menu-inline .ant-menu-item {
+//   height: 45px;
+//   margin-top: 0 !important;
+//   margin-bottom: 0px !important;
+//   padding: 0px 15px;
+//   padding-left: 15px !important;
+//   overflow: hidden;
+//   line-height: 45px;
+//   text-overflow: ellipsis;
+//   border-bottom: 1px solid #eeeeee;
+// }
+
+// //WHEN COLLAPSED
+// .ant-menu-vertical .ant-menu-item {
+//   height: 40px;
+//   margin-top: 0 !important;
+//   margin-bottom: 0px !important;
+//   padding: 0 16px;
+//   overflow: hidden;
+//   line-height: 40px;
+//   text-overflow: ellipsis;
+//   border-bottom: 1px solid #eeeeee;
+// }

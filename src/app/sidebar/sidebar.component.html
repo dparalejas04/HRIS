@@ -1,121 +1,234 @@
-<div class="header-container">
-  <div class="header">
-    <button nz-button nzType="primary" (click)="toggleCollapsed()">
-      <span nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></span>
-    </button>
-  </div>
-</div>
-<div class="wrapper">
-  <ul nz-menu nzMode="inline" nzTheme="light" [nzInlineCollapsed]="isCollapsed">
-    <li
-      id="dashboard"
-      nz-menu-item
-      nz-tooltip
-      nzTooltipPlacement="right"
-      [nzTooltipTitle]="isCollapsed ? 'Dashboard' : ''"
-      nzSelected
+<!-- HEADER -->
+<nz-layout class="header-layout">
+  <nz-header>
+    <span
+      class="trigger"
+      nz-icon
+      [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+      (click)="isCollapsed = !isCollapsed"
+    ></span>
+    <span class="line-header">|</span>
+    <img
+      src="/assets/Dashboard-assets/Header-logo.png"
+      alt="hris-logo"
+      class="hris-logo"
+    />
+    <div
+      class="acc-container"
+      nz-button
+      nz-popover
+      [(nzPopoverVisible)]="visible"
+      (nzPopoverVisibleChange)="change($event)"
+      nzPopoverTrigger="click"
+      [nzPopoverContent]="contentTemplate"
     >
-      <span nz-icon nzType="dashboard"></span>
-      <span>Dashboard</span>
-    </li>
+      <img
+        src="/assets/Dashboard-assets/Office-Manager.png"
+        alt="picture"
+        class="acc-pic"
+      />
+      <span class="acc-name">Office Manager</span>
+      <ng-template #contentTemplate>
+        <a (click)="signOut()">Sign out</a>
+      </ng-template>
+    </div>
+  </nz-header>
+</nz-layout>
+<!-- ////////////////////////////////////////////// -->
 
-    <li
-      id="employees"
-      nz-menu-item
-      nz-tooltip
-      nzTooltipPlacement="right"
-      [nzTooltipTitle]="isCollapsed ? 'Employees' : ''"
-    >
-      <span nz-icon nzType="employees"></span>
-      <span>Employees</span>
-    </li>
+<!-- SIDEBAR -->
+<nz-layout class="sidebar-layout">
+  <nz-sider
+    nzCollapsible
+    [(nzCollapsed)]="!isCollapsed"
+    [nzTrigger]="null"
+    [nzWidth]="215"
+  >
+    <ul nz-menu nzTheme="light" nzMode="inline">
+      <li nz-menu-item id="dashboard" nzSelected (click)="select('dashboard')">
+        <div class="sidemenu-logo-container">
+          <div class="dashboard-logo">
+            <img
+              *ngIf="!navigate.dashboard"
+              src="/assets/Sidebar-assets/Default-Icons/Dashboard-default.png"
+              alt="dash-logo"
+              class="sidebar-logo"
+            />
 
-    <li
-      id="department"
-      nz-menu-item
-      nz-tooltip
-      nzTooltipPlacement="right"
-      [nzTooltipTitle]="isCollapsed ? 'Department' : ''"
-    >
-      <span nz-icon nzType="department"></span>
-      <span>Department</span>
-    </li>
+            <img
+              *ngIf="navigate.dashboard"
+              src="/assets/Sidebar-assets/Active-Icons/Dashboard.png"
+              alt="dash-logo"
+              class="sidebar-logo"
+            />
+          </div>
+        </div>
+        <span class="menu-label">Dashboard</span>
+      </li>
+      <li nz-menu-group nzTitle="ORGANIZATION"></li>
+      <li nz-menu-item (click)="select('employees')">
+        <div class="sidemenu-logo-container">
+          <img
+            *ngIf="!navigate.employees"
+            src="/assets/Sidebar-assets/Default-Icons/Employees-default.png"
+            alt="emp-logo"
+            class="sidebar-logo"
+          />
 
-    <li
-      id="position"
-      nz-menu-item
-      nz-tooltip
-      nzTooltipPlacement="right"
-      [nzTooltipTitle]="isCollapsed ? 'Position' : ''"
-    >
-      <span nz-icon nzType="position"></span>
-      <span>Position</span>
-    </li>
+          <img
+            *ngIf="navigate.employees"
+            src="/assets/Sidebar-assets/Active-Icons/Employees.png"
+            alt="emp-logo"
+            class="sidebar-logo"
+          />
+        </div>
+        <span class="menu-label">Employees</span>
+      </li>
+      <li nz-menu-item (click)="select('department')">
+        <div class="sidemenu-logo-container">
+          <img
+            *ngIf="!navigate.department"
+            src="/assets/Sidebar-assets/Default-Icons/Department-default.png"
+            alt="dept-logo"
+            class="sidebar-logo"
+          />
 
-    <li
-      id="computers"
-      nz-menu-item
-      nz-tooltip
-      nzTooltipPlacement="right"
-      [nzTooltipTitle]="isCollapsed ? 'Computers' : ''"
-    >
-      <span nz-icon nzType="computers"></span>
-      <span>Computers</span>
-    </li>
+          <img
+            *ngIf="navigate.department"
+            src="/assets/Sidebar-assets/Active-Icons/Department.png"
+            alt="dept-logo"
+            class="sidebar-logo"
+          />
+        </div>
+        <span class="menu-label">Department</span>
+      </li>
+      <li nz-menu-item (click)="select('position')">
+        <div class="sidemenu-logo-container">
+          <img
+            *ngIf="!navigate.position"
+            src="/assets/Sidebar-assets/Default-Icons/Position-default.png"
+            alt="posi-logo"
+            class="sidebar-logo"
+          />
 
-    <li
-      id="appraisal"
-      nz-menu-item
-      nz-tooltip
-      nzTooltipPlacement="right"
-      [nzTooltipTitle]="isCollapsed ? 'Appraisal' : ''"
-    >
-      <span nz-icon nzType="appraisal"></span>
-      <span>Appraisal</span>
-    </li>
+          <img
+            *ngIf="navigate.position"
+            src="/assets/Sidebar-assets/Active-Icons/Position.png"
+            alt="posi-logo"
+            class="sidebar-logo"
+          />
+        </div>
+        <span class="menu-label">Position</span>
+      </li>
+      <li nz-menu-item (click)="select('computers')">
+        <div class="sidemenu-logo-container">
+          <img
+            *ngIf="!navigate.computers"
+            src="/assets/Sidebar-assets/Default-Icons/Computers-default.png"
+            alt="comp-logo"
+            class="sidebar-logo"
+          />
 
-    <li
-      id="salary"
-      nz-menu-item
-      nz-tooltip
-      nzTooltipPlacement="right"
-      [nzTooltipTitle]="isCollapsed ? 'Salary' : ''"
-    >
-      <span nz-icon nzType="salary"></span>
-      <span>Salary</span>
-    </li>
+          <img
+            *ngIf="navigate.computers"
+            src="/assets/Sidebar-assets/Active-Icons/Computers.png"
+            alt="comp-logo"
+            class="sidebar-logo"
+          />
+        </div>
+        <span class="menu-label">Computers</span>
+      </li>
+      <li nz-menu-item (click)="select('appraisal')">
+        <div class="sidemenu-logo-container">
+          <img
+            *ngIf="!navigate.appraisal"
+            src="/assets/Sidebar-assets/Default-Icons/Appraisal-default.png"
+            alt="appr-logo"
+            class="sidebar-logo"
+          />
 
-    <li
-      id="timesheet"
-      nz-menu-item
-      nz-tooltip
-      nzTooltipPlacement="right"
-      [nzTooltipTitle]="isCollapsed ? 'Timesheet' : ''"
-    >
-      <span nz-icon nzType="timesheet"></span>
-      <span>Timesheet</span>
-    </li>
+          <img
+            *ngIf="navigate.appraisal"
+            src="/assets/Sidebar-assets/Active-Icons/Appraisal.png"
+            alt="appr-logo"
+            class="sidebar-logo"
+          />
+        </div>
+        <span class="menu-label">Appraisal</span>
+      </li>
+      <li nz-menu-item (click)="select('salary')">
+        <div class="sidemenu-logo-container">
+          <img
+            *ngIf="!navigate.salary"
+            src="/assets/Sidebar-assets/Default-Icons/Salary-default.png"
+            alt="sala-logo"
+            class="sidebar-logo"
+          />
 
-    <li
-      id="leave"
-      nz-menu-item
-      nz-tooltip
-      nzTooltipPlacement="right"
-      [nzTooltipTitle]="isCollapsed ? 'Leave' : ''"
-    >
-      <span nz-icon nzType="leave"></span>
-      <span>Leave</span>
-    </li>
+          <img
+            *ngIf="navigate.salary"
+            src="/assets/Sidebar-assets/Active-Icons/Salary.png"
+            alt="sala-logo"
+            class="sidebar-logo"
+          />
+        </div>
+        <span class="menu-label">Salary</span>
+      </li>
+      <li nz-menu-item (click)="select('timesheet')">
+        <div class="sidemenu-logo-container">
+          <img
+            *ngIf="!navigate.timesheet"
+            src="/assets/Sidebar-assets/Default-Icons/Timesheet-default.png"
+            alt="time-logo"
+            class="sidebar-logo"
+          />
 
-    <li
-      id="expenses"
-      nz-menu-item
-      nz-tooltip
-      nzTooltipPlacement="right"
-      [nzTooltipTitle]="isCollapsed ? 'Expenses' : ''"
-    >
-      <span nz-icon nzType="expenses"></span>
-      <span>Expenses</span>
-    </li>
-  </ul>
-</div>
+          <img
+            *ngIf="navigate.timesheet"
+            src="/assets/Sidebar-assets/Active-Icons/Timesheet.png"
+            alt="time-logo"
+            class="sidebar-logo"
+          />
+        </div>
+        <span class="menu-label">Timesheet</span>
+      </li>
+      <li nz-menu-item (click)="select('leave')">
+        <div class="sidemenu-logo-container">
+          <img
+            *ngIf="!navigate.leave"
+            src="/assets/Sidebar-assets/Default-Icons/Leave-default.png"
+            alt="leav-logo"
+            class="sidebar-logo"
+          />
+
+          <img
+            *ngIf="navigate.leave"
+            src="/assets/Sidebar-assets/Active-Icons/Leave.png"
+            alt="leav-logo"
+            class="sidebar-logo"
+          />
+        </div>
+        <span class="menu-label">Leave</span>
+      </li>
+      <li nz-menu-group nzTitle="WORKSPACE"></li>
+      <li nz-menu-item (click)="select('expenses')">
+        <div class="sidemenu-logo-container">
+          <img
+            *ngIf="!navigate.expenses"
+            src="/assets/Sidebar-assets/Default-Icons/Expenses-default.png"
+            alt="Expe-logo"
+            class="sidebar-logo"
+          />
+
+          <img
+            *ngIf="navigate.expenses"
+            src="/assets/Sidebar-assets/Active-Icons/Expenses.png"
+            alt="Expe-logo"
+            class="sidebar-logo"
+          />
+        </div>
+        <span class="menu-label">Expenses</span>
+      </li>
+    </ul>
+  </nz-sider>
+</nz-layout>

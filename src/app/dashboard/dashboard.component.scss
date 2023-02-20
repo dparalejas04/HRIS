@@ -249,7 +249,8 @@ nz-header {
   flex-wrap: nowrap;
   background-color: white;
   max-width: 15.3822916667vw;
-  max-height: 21.4681440443vh;
+  // max-height: 21.4681440443vh;
+  max-height: 20vh;
   width: 100%;
   height: 100%;
   border-radius: 15px;
@@ -285,7 +286,7 @@ nz-header {
   margin-top: 20px;
   padding: 20px;
   width: 59.5%;
-  height: 70%;
+  height: 72%;
   border-radius: 15px;
   box-shadow: 0px 1px 10px rgb(0 0 0 / 25%);
   flex-direction: row;
@@ -294,6 +295,7 @@ nz-header {
 .tab-inner-container {
   box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.25);
   height: 100%;
+  // min-height: 50vh;
   padding: 10px;
 }
 
@@ -340,22 +342,19 @@ p {
 [nz-carousel-content] {
   text-align: center;
   height: 100%;
-  min-height: 45vh;
-  line-height: 325px;
+  width: 100%;
+  // min-height: 46.6vh;
+  // line-height: 325px;
+  line-height: 0;
   background: #364d79;
   color: #fff;
   overflow: hidden;
 }
 
 .imgs {
-  background-size: contain !important;
-  background-repeat: no-repeat;
   width: 100%;
-  /* height: 23em
-em
-; */
-  /* height: 324px; */
-  height: 45vh;
+  height: 46.6vh;
+  object-fit: fill;
 }
 
 //temporary setting
@@ -381,6 +380,7 @@ em
   box-shadow: 0px 1px 10px rgb(0 0 0 / 25%);
   flex-direction: column;
   width: 39.2%;
+  height: 72%;
   //max-width: 31.7vw;
 }
 
