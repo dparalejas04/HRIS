@@ -45,7 +45,13 @@
     [nzWidth]="215"
   >
     <ul nz-menu nzTheme="light" nzMode="inline">
-      <li nz-menu-item id="dashboard" nzSelected (click)="select('dashboard')">
+      <li
+        nz-menu-item
+        nzSelected
+        id="dashboard"
+        (click)="select('dashboard')"
+        (click)="redirectDashboard()"
+      >
         <div class="sidemenu-logo-container">
           <div class="dashboard-logo">
             <img
@@ -66,7 +72,11 @@
         <span class="menu-label">Dashboard</span>
       </li>
       <li nz-menu-group nzTitle="ORGANIZATION"></li>
-      <li nz-menu-item (click)="select('employees')">
+      <li
+        nz-menu-item
+        (click)="select('employees')"
+        (click)="redirectEmployees()"
+      >
         <div class="sidemenu-logo-container">
           <img
             *ngIf="!navigate.employees"

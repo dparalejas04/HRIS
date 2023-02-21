@@ -1,5 +1,6 @@
 import * as AllIcons from '@ant-design/icons-angular/icons';
 
+import { CommonModule, registerLocaleData } from '@angular/common';
 import { NZ_I18N, en_US } from 'ng-zorro-antd/i18n';
 
 import { AppComponent } from './app.component';
@@ -7,7 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { DashboardModule } from './dashboard/dashboard.module';
 import { DemoNgZorroAntdModule } from './ng-zorro-antd.module';
 import { EmployeesModule } from './employees/employees.module';
 import { FormsModule } from '@angular/forms';
@@ -19,26 +19,28 @@ import { NZ_ICONS } from 'ng-zorro-antd/icon';
 import { NgModule } from '@angular/core';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
-import { SharedModule } from './shared.module';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import en from '@angular/common/locales/en';
-import { registerLocaleData } from '@angular/common';
 
 registerLocaleData(en);
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent],
+  declarations: [SidebarComponent],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    EmployeesModule,
-    DashboardModule,
-    SharedModule,
+    CommonModule,
+    IconsProviderModule,
+    NzLayoutModule,
+    NzMenuModule,
+    DemoNgZorroAntdModule,
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }],
-  bootstrap: [AppComponent],
+  exports: [
+    SidebarComponent,
+    IconsProviderModule,
+    NzLayoutModule,
+    NzMenuModule,
+    DemoNgZorroAntdModule,
+  ],
+  providers: [],
+  bootstrap: [],
 })
-export class AppModule {}
+export class SharedModule {}

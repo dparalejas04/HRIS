@@ -10,9 +10,15 @@ import { Router } from '@angular/router';
 export class SidebarComponent implements OnInit {
   public isCollapsed: boolean;
   visible: boolean = false;
+  hoverImage: boolean;
 
   constructor(private router: Router) {
     this.isCollapsed = true;
+    this.hoverImage = false;
+  }
+
+  switchImage(hover: boolean) {
+    this.hoverImage = hover;
   }
 
   ngOnInit(): void {}
@@ -39,6 +45,7 @@ export class SidebarComponent implements OnInit {
       case 'dashboard': {
         //statements;
         this.navigate.dashboard = true;
+        this.redirectDashboard();
         break;
       }
       case 'employees': {
@@ -78,6 +85,14 @@ export class SidebarComponent implements OnInit {
         break;
       }
     }
+  }
+
+  redirectDashboard(): void {
+    this.router.navigateByUrl('/dashboard');
+  }
+
+  redirectEmployees(): void {
+    this.router.navigateByUrl('/employees');
   }
 
   toggleCollapsed(): void {
