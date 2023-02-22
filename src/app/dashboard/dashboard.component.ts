@@ -32,9 +32,6 @@ export class DashboardComponent implements OnInit {
   eventChange(): void {
     this.reinitTab = true;
   }
-  signOut(): void {
-    this.router.navigateByUrl('/login');
-  }
 
   // changeTabindex(index: number) {
   //   // this.currentTabindex = index;
@@ -42,26 +39,26 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  navigate: any = {
-    dashboard: true,
-    employees: false,
-    department: false,
-    position: false,
-    computers: false,
-    appraisal: false,
-    salary: false,
-    timesheet: false,
-    leave: false,
-    expenses: false,
-  };
+  // navigate: any = {
+  //   dashboard: true,
+  //   employees: false,
+  //   department: false,
+  //   position: false,
+  //   computers: false,
+  //   appraisal: false,
+  //   salary: false,
+  //   timesheet: false,
+  //   leave: false,
+  //   expenses: false,
+  // };
 
   // redirectDashboard(): void {
   //   this.router.navigateByUrl('/dashboard');
   // }
 
-  change(value: boolean): void {
-    console.log(value);
-  }
+  // change(value: boolean): void {
+  //   console.log(value);
+  // }
 
   // public select(navigate: string) {
   //   for (const key in this.navigate) {

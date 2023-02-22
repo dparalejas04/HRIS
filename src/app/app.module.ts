@@ -21,6 +21,7 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { SharedModule } from './shared.module';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { TopbarComponent } from './topbar/topbar.component';
 import en from '@angular/common/locales/en';
 import { registerLocaleData } from '@angular/common';
 

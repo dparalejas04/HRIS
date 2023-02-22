@@ -1,146 +1,141 @@
 <div class="main-container">
-  <div class="wrapper">
-    <app-sidebar class="sidebar-content"></app-sidebar>
+  <app-topbar class="header-content"></app-topbar>
+  <app-sidebar class="sidebar-content"></app-sidebar>
+  <!-- CONTENT  -->
+  <div class="inner-content">
+    <div class="card">
+      <img
+        src="/assets/Dashboard-assets/Employees-icon.png"
+        alt="total-employees"
+        class="icons"
+      />
+      <div class="text-container">
+        <span class="number">68</span>
+        <span class="card-title">Total Employees</span>
+      </div>
+    </div>
+    <div class="card">
+      <img
+        src="/assets/Dashboard-assets/Present-icon.png"
+        alt="present"
+        class="icons"
+      />
+      <div class="text-container">
+        <span class="number">60</span>
+        <span class="card-title">Present Employees</span>
+      </div>
+    </div>
+    <div class="card">
+      <img
+        src="/assets/Dashboard-assets/Absent-icon.png"
+        alt="absent"
+        class="icons"
+      />
+      <div class="text-container">
+        <span class="number">68</span>
+        <span class="card-title">Absent Employees</span>
+      </div>
+    </div>
 
-    <!-- CONTENT  -->
-    <div class="content">
-      <div class="inner-content">
-        <div class="card">
-          <img
-            src="/assets/Dashboard-assets/Employees-icon.png"
-            alt="total-employees"
-            class="icons"
-          />
-          <div class="text-container">
-            <span class="number">68</span>
-            <span class="card-title">Total Employees</span>
+    <div class="card">
+      <img
+        src="/assets/Dashboard-assets/Late-icon.png"
+        alt="late"
+        class="icons"
+      />
+      <div class="text-container">
+        <span class="number">01</span>
+        <span class="card-title">Late Employees</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <img
+        src="/assets/Dashboard-assets/OnLeave-icon.png"
+        alt="onLeave"
+        class="icons"
+      />
+      <div class="text-container">
+        <span class="number">04</span>
+        <span class="card-title">On Leave</span>
+      </div>
+    </div>
+
+    <!-- ANNOUNCEMENTS & EVENTS TAB -->
+    <div class="event-container">
+      <nz-tabset
+        (nzSelectChange)="eventChange()"
+        [nzTabBarExtraContent]="extraTemplate"
+        nzSize="small"
+      >
+        <nz-tab [nzTitle]="'Announcement'">
+          <div class="tab-inner-container">
+            <h2>Log-in and Log-out Reminder</h2>
+            <p>To: <span>Everyone</span></p>
+            <p>Date: <span>January 14, 2023 09:20:53 AM</span></p>
+            <p align="justify">
+              As a reminder, it is important for all employees to log in and log
+              out of our systems accurately to maintain accurate record keeping.
+              Please make sure to log in when starting your work day and log out
+              when ending it. This ensures that all working hours are accurately
+              reflected and helps us better track productivity. Thank you for
+              your cooperation in maintaining accurate records.
+              <br /><br />
+              Best regards,
+            </p>
+            <p>Office Manager</p>
           </div>
-        </div>
-        <div class="card">
-          <img
-            src="/assets/Dashboard-assets/Present-icon.png"
-            alt="present"
-            class="icons"
-          />
-          <div class="text-container">
-            <span class="number">60</span>
-            <span class="card-title">Present Employees</span>
-          </div>
-        </div>
-        <div class="card">
-          <img
-            src="/assets/Dashboard-assets/Absent-icon.png"
-            alt="absent"
-            class="icons"
-          />
-          <div class="text-container">
-            <span class="number">68</span>
-            <span class="card-title">Absent Employees</span>
-          </div>
-        </div>
+        </nz-tab>
 
-        <div class="card">
-          <img
-            src="/assets/Dashboard-assets/Late-icon.png"
-            alt="late"
-            class="icons"
-          />
-          <div class="text-container">
-            <span class="number">01</span>
-            <span class="card-title">Late Employees</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <img
-            src="/assets/Dashboard-assets/OnLeave-icon.png"
-            alt="onLeave"
-            class="icons"
-          />
-          <div class="text-container">
-            <span class="number">04</span>
-            <span class="card-title">On Leave</span>
-          </div>
-        </div>
-
-        <!-- ANNOUNCEMENTS & EVENTS TAB -->
-        <div class="event-container">
-          <nz-tabset
-            (nzSelectChange)="eventChange()"
-            [nzTabBarExtraContent]="extraTemplate"
-            nzSize="small"
-          >
-            <nz-tab [nzTitle]="'Announcement'">
-              <div class="tab-inner-container">
-                <h2>Log-in and Log-out Reminder</h2>
-                <p>To: <span>Everyone</span></p>
-                <p>Date: <span>January 14, 2023 09:20:53 AM</span></p>
-                <p align="justify">
-                  As a reminder, it is important for all employees to log in and
-                  log out of our systems accurately to maintain accurate record
-                  keeping. Please make sure to log in when starting your work
-                  day and log out when ending it. This ensures that all working
-                  hours are accurately reflected and helps us better track
-                  productivity. Thank you for your cooperation in maintaining
-                  accurate records.
-                  <br /><br />
-                  Best regards,
-                </p>
-                <p>Office Manager</p>
-              </div>
-            </nz-tab>
-
-            <nz-tab [nzTitle]="'Events'">
-              <nz-carousel *ngIf="reinitTab" nzAutoPlay [nzEffect]="'fade'">
-                <div nz-carousel-content *ngFor="let index of imageUrls">
-                  <!-- <h3>{{ index }}</h3> -->
-                  <img [src]="index" ngClass="imgs" />
-                </div>
-              </nz-carousel>
-            </nz-tab>
-          </nz-tabset>
-
-          <!-- ACTION BUTTONS -->
-          <ng-template #extraTemplate>
-            <button nz-button id="add-button">
-              <span nz-icon nzType="plus" nzTheme="outline"></span>ADD
-            </button>
-            <button nz-button>
-              <img
-                src="/assets/Dashboard-assets/Tabs/settings.png"
-                alt="settings"
-                class="tab-setting"
-              />
-            </button>
-          </ng-template>
-        </div>
-
-        <!-- BIRTHDAY, ANNIVERSARY AND HOLIDAY TAB -->
-        <div class="occasion-container">
-          <!-- <span>Birthday</span> -->
-          <div class="tab-container">
-            <div
-              class="tab"
-              [class.active]="activeTab === 1"
-              (click)="activeTab = 1"
-            >
-              Birthday
+        <nz-tab [nzTitle]="'Events'">
+          <nz-carousel *ngIf="reinitTab" nzAutoPlay [nzEffect]="'fade'">
+            <div nz-carousel-content *ngFor="let index of imageUrls">
+              <!-- <h3>{{ index }}</h3> -->
+              <img [src]="index" ngClass="imgs" />
             </div>
-            <div
-              class="tab"
-              [class.active]="activeTab === 2"
-              (click)="activeTab = 2"
-            >
-              Anniversary
-            </div>
-            <div
-              class="tab"
-              [class.active]="activeTab === 3"
-              (click)="activeTab = 3"
-            >
-              Holidays
-            </div>
-          </div>
+          </nz-carousel>
+        </nz-tab>
+      </nz-tabset>
+
+      <!-- ACTION BUTTONS -->
+      <ng-template #extraTemplate>
+        <button nz-button id="add-button">
+          <span nz-icon nzType="plus" nzTheme="outline"></span>ADD
+        </button>
+        <button nz-button>
+          <img
+            src="/assets/Dashboard-assets/Tabs/settings.png"
+            alt="settings"
+            class="tab-setting"
+          />
+        </button>
+      </ng-template>
+    </div>
+
+    <!-- BIRTHDAY, ANNIVERSARY AND HOLIDAY TAB -->
+    <div class="occasion-container">
+      <!-- <span>Birthday</span> -->
+      <div class="tab-container">
+        <div
+          class="tab"
+          [class.active]="activeTab === 1"
+          (click)="activeTab = 1"
+        >
+          Birthday
+        </div>
+        <div
+          class="tab"
+          [class.active]="activeTab === 2"
+          (click)="activeTab = 2"
+        >
+          Anniversary
+        </div>
+        <div
+          class="tab"
+          [class.active]="activeTab === 3"
+          (click)="activeTab = 3"
+        >
+          Holidays
         </div>
       </div>
     </div>

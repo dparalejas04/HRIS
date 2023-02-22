@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { NgModule } from '@angular/core';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { TopbarComponent } from './topbar/topbar.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
@@ -11,6 +12,12 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () =>
       import('./login/login.module').then((m) => m.LoginModule),
+  },
+
+  {
+    path: 'sidebar',
+    component: SidebarComponent,
+    // loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
   {
     path: 'dashboard',
@@ -20,7 +27,6 @@ const routes: Routes = [
 
   {
     path: 'employees',
-
     loadChildren: () =>
       import('./employees/employees.module').then((m) => m.EmployeesModule),
   },

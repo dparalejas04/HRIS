@@ -1,0 +1,143 @@
+// >> HEADER << \\
+
+.ant-layout-header {
+  height: 60px;
+  padding: 0 15px 0 0;
+  color: rgba(0, 0, 0, 0.85);
+  line-height: 60px;
+  background: #fff;
+  // position: fixed;
+}
+
+.line-header {
+  color: #efefef;
+  font-size: 30px;
+  position: fixed;
+  left: 60px;
+  top: -5px;
+}
+
+nz-header {
+  background: #fff;
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 15px 0 0;
+  height: 60px;
+  width: 100%;
+  box-shadow: 0px 2px 4px rgb(0 0 0 / 25%);
+  flex-direction: column;
+  align-content: space-between;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.hris-logo {
+  width: 100%;
+  max-width: 160px;
+  position: fixed;
+  left: 80px;
+}
+
+// HEADER >> ACCOUNT \\
+a {
+  color: #a4abb3;
+  font-family: helvetica;
+  font-weight: 400;
+}
+
+a:hover {
+  color: black;
+}
+
+.overlay {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.acc-icons {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  padding: 5px;
+  align-items: center;
+}
+
+.profile-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.sign-out {
+  width: 18px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+::ng-deep .ant-popover-inner-content {
+  width: 130px;
+  padding: 10px 15px !important;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.acc-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-direction: row;
+}
+
+.acc-pic {
+  width: 100%;
+  margin-right: 10px;
+  max-width: 40px;
+  border: 2px solid #bcc3cc;
+  border-radius: 30px;
+}
+
+.acc-name {
+  width: 120px;
+  font-size: 14px;
+  font-family: Helvetica;
+  overflow: visible;
+}
+
+// BURGER MENU \\
+.trigger {
+  font-size: 18px;
+  line-height: 60px;
+  padding: 0 20px;
+  cursor: pointer;
+  transition: color 0.3s;
+  color: #838a92;
+}
+
+.trigger:hover {
+  color: #b30938;
+}
+///////////////////////////////////
+
+/* Media Query for Mobile */
+@media (max-width: 500px) {
+  .acc-name {
+    display: none;
+  }
+
+  .acc-pic {
+    margin: 0;
+  }
+}
+
+/* Media Query for Tablet */
+@media (min-width: 767px) and (max-width: 1023px) {
+}
+
+/* Media Query for Desktop */
+@media (min-width: 1024px) {
+}

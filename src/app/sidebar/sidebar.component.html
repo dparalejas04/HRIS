@@ -1,244 +1,208 @@
-<!-- HEADER -->
-<nz-layout class="header-layout">
-  <nz-header>
-    <span
-      class="trigger"
-      nz-icon
-      [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-      (click)="isCollapsed = !isCollapsed"
-    ></span>
-    <span class="line-header">|</span>
-    <img
-      src="/assets/Dashboard-assets/Header-logo.png"
-      alt="hris-logo"
-      class="hris-logo"
-    />
-    <div
-      class="acc-container"
-      nz-button
-      nz-popover
-      [(nzPopoverVisible)]="visible"
-      (nzPopoverVisibleChange)="change($event)"
-      nzPopoverTrigger="click"
-      [nzPopoverContent]="contentTemplate"
-    >
-      <img
-        src="/assets/Dashboard-assets/Office-Manager.png"
-        alt="picture"
-        class="acc-pic"
-      />
-      <span class="acc-name">Office Manager</span>
-      <ng-template #contentTemplate>
-        <a (click)="signOut()">Sign out</a>
-      </ng-template>
-    </div>
-  </nz-header>
-</nz-layout>
-<!-- ////////////////////////////////////////////// -->
-
 <!-- SIDEBAR -->
-<nz-layout class="sidebar-layout">
-  <nz-sider
-    nzCollapsible
-    [(nzCollapsed)]="!isCollapsed"
-    [nzTrigger]="null"
-    [nzWidth]="215"
-  >
-    <ul nz-menu nzTheme="light" nzMode="inline">
-      <li
-        nz-menu-item
-        nzSelected
-        id="dashboard"
-        (click)="select('dashboard')"
-        (click)="redirectDashboard()"
-      >
-        <div class="sidemenu-logo-container">
-          <div class="dashboard-logo">
+<div class="sidebar-layout">
+  <nz-layout>
+    <nz-sider
+      nzCollapsible
+      [(nzCollapsed)]="!isCollapsed"
+      [nzTrigger]="null"
+      [nzWidth]="215"
+    >
+      <ul nz-menu nzTheme="light" nzMode="inline">
+        <li
+          nz-menu-item
+          nzSelected
+          id="dashboard"
+          (click)="select('dashboard')"
+          (click)="redirectDashboard()"
+        >
+          <div class="sidemenu-logo-container">
+            <div class="dashboard-logo">
+              <img
+                *ngIf="!navigate.dashboard"
+                src="/assets/Sidebar-assets/Default-Icons/Dashboard-default.png"
+                alt="dash-logo"
+                class="sidebar-logo"
+              />
+
+              <img
+                *ngIf="navigate.dashboard"
+                src="/assets/Sidebar-assets/Active-Icons/Dashboard.png"
+                alt="dash-logo"
+                class="sidebar-logo"
+              />
+            </div>
+          </div>
+          <span class="menu-label">Dashboard</span>
+        </li>
+        <li nz-menu-group nzTitle="ORGANIZATION"></li>
+        <li
+          nz-menu-item
+          (click)="select('employees')"
+          (click)="redirectEmployees()"
+        >
+          <div class="sidemenu-logo-container">
             <img
-              *ngIf="!navigate.dashboard"
-              src="/assets/Sidebar-assets/Default-Icons/Dashboard-default.png"
-              alt="dash-logo"
+              *ngIf="!navigate.employees"
+              src="/assets/Sidebar-assets/Default-Icons/Employees-default.png"
+              alt="emp-logo"
               class="sidebar-logo"
             />
 
             <img
-              *ngIf="navigate.dashboard"
-              src="/assets/Sidebar-assets/Active-Icons/Dashboard.png"
-              alt="dash-logo"
+              *ngIf="navigate.employees"
+              src="/assets/Sidebar-assets/Active-Icons/Employees.png"
+              alt="emp-logo"
               class="sidebar-logo"
             />
           </div>
-        </div>
-        <span class="menu-label">Dashboard</span>
-      </li>
-      <li nz-menu-group nzTitle="ORGANIZATION"></li>
-      <li
-        nz-menu-item
-        (click)="select('employees')"
-        (click)="redirectEmployees()"
-      >
-        <div class="sidemenu-logo-container">
-          <img
-            *ngIf="!navigate.employees"
-            src="/assets/Sidebar-assets/Default-Icons/Employees-default.png"
-            alt="emp-logo"
-            class="sidebar-logo"
-          />
+          <span class="menu-label">Employees</span>
+        </li>
+        <li nz-menu-item (click)="select('department')">
+          <div class="sidemenu-logo-container">
+            <img
+              *ngIf="!navigate.department"
+              src="/assets/Sidebar-assets/Default-Icons/Department-default.png"
+              alt="dept-logo"
+              class="sidebar-logo"
+            />
 
-          <img
-            *ngIf="navigate.employees"
-            src="/assets/Sidebar-assets/Active-Icons/Employees.png"
-            alt="emp-logo"
-            class="sidebar-logo"
-          />
-        </div>
-        <span class="menu-label">Employees</span>
-      </li>
-      <li nz-menu-item (click)="select('department')">
-        <div class="sidemenu-logo-container">
-          <img
-            *ngIf="!navigate.department"
-            src="/assets/Sidebar-assets/Default-Icons/Department-default.png"
-            alt="dept-logo"
-            class="sidebar-logo"
-          />
+            <img
+              *ngIf="navigate.department"
+              src="/assets/Sidebar-assets/Active-Icons/Department.png"
+              alt="dept-logo"
+              class="sidebar-logo"
+            />
+          </div>
+          <span class="menu-label">Department</span>
+        </li>
+        <li nz-menu-item (click)="select('position')">
+          <div class="sidemenu-logo-container">
+            <img
+              *ngIf="!navigate.position"
+              src="/assets/Sidebar-assets/Default-Icons/Position-default.png"
+              alt="posi-logo"
+              class="sidebar-logo"
+            />
 
-          <img
-            *ngIf="navigate.department"
-            src="/assets/Sidebar-assets/Active-Icons/Department.png"
-            alt="dept-logo"
-            class="sidebar-logo"
-          />
-        </div>
-        <span class="menu-label">Department</span>
-      </li>
-      <li nz-menu-item (click)="select('position')">
-        <div class="sidemenu-logo-container">
-          <img
-            *ngIf="!navigate.position"
-            src="/assets/Sidebar-assets/Default-Icons/Position-default.png"
-            alt="posi-logo"
-            class="sidebar-logo"
-          />
+            <img
+              *ngIf="navigate.position"
+              src="/assets/Sidebar-assets/Active-Icons/Position.png"
+              alt="posi-logo"
+              class="sidebar-logo"
+            />
+          </div>
+          <span class="menu-label">Position</span>
+        </li>
+        <li nz-menu-item (click)="select('computers')">
+          <div class="sidemenu-logo-container">
+            <img
+              *ngIf="!navigate.computers"
+              src="/assets/Sidebar-assets/Default-Icons/Computers-default.png"
+              alt="comp-logo"
+              class="sidebar-logo"
+            />
 
-          <img
-            *ngIf="navigate.position"
-            src="/assets/Sidebar-assets/Active-Icons/Position.png"
-            alt="posi-logo"
-            class="sidebar-logo"
-          />
-        </div>
-        <span class="menu-label">Position</span>
-      </li>
-      <li nz-menu-item (click)="select('computers')">
-        <div class="sidemenu-logo-container">
-          <img
-            *ngIf="!navigate.computers"
-            src="/assets/Sidebar-assets/Default-Icons/Computers-default.png"
-            alt="comp-logo"
-            class="sidebar-logo"
-          />
+            <img
+              *ngIf="navigate.computers"
+              src="/assets/Sidebar-assets/Active-Icons/Computers.png"
+              alt="comp-logo"
+              class="sidebar-logo"
+            />
+          </div>
+          <span class="menu-label">Computers</span>
+        </li>
+        <li nz-menu-item (click)="select('appraisal')">
+          <div class="sidemenu-logo-container">
+            <img
+              *ngIf="!navigate.appraisal"
+              src="/assets/Sidebar-assets/Default-Icons/Appraisal-default.png"
+              alt="appr-logo"
+              class="sidebar-logo"
+            />
 
-          <img
-            *ngIf="navigate.computers"
-            src="/assets/Sidebar-assets/Active-Icons/Computers.png"
-            alt="comp-logo"
-            class="sidebar-logo"
-          />
-        </div>
-        <span class="menu-label">Computers</span>
-      </li>
-      <li nz-menu-item (click)="select('appraisal')">
-        <div class="sidemenu-logo-container">
-          <img
-            *ngIf="!navigate.appraisal"
-            src="/assets/Sidebar-assets/Default-Icons/Appraisal-default.png"
-            alt="appr-logo"
-            class="sidebar-logo"
-          />
+            <img
+              *ngIf="navigate.appraisal"
+              src="/assets/Sidebar-assets/Active-Icons/Appraisal.png"
+              alt="appr-logo"
+              class="sidebar-logo"
+            />
+          </div>
+          <span class="menu-label">Appraisal</span>
+        </li>
+        <li nz-menu-item (click)="select('salary')">
+          <div class="sidemenu-logo-container">
+            <img
+              *ngIf="!navigate.salary"
+              src="/assets/Sidebar-assets/Default-Icons/Salary-default.png"
+              alt="sala-logo"
+              class="sidebar-logo"
+            />
 
-          <img
-            *ngIf="navigate.appraisal"
-            src="/assets/Sidebar-assets/Active-Icons/Appraisal.png"
-            alt="appr-logo"
-            class="sidebar-logo"
-          />
-        </div>
-        <span class="menu-label">Appraisal</span>
-      </li>
-      <li nz-menu-item (click)="select('salary')">
-        <div class="sidemenu-logo-container">
-          <img
-            *ngIf="!navigate.salary"
-            src="/assets/Sidebar-assets/Default-Icons/Salary-default.png"
-            alt="sala-logo"
-            class="sidebar-logo"
-          />
+            <img
+              *ngIf="navigate.salary"
+              src="/assets/Sidebar-assets/Active-Icons/Salary.png"
+              alt="sala-logo"
+              class="sidebar-logo"
+            />
+          </div>
+          <span class="menu-label">Salary</span>
+        </li>
+        <li nz-menu-item (click)="select('timesheet')">
+          <div class="sidemenu-logo-container">
+            <img
+              *ngIf="!navigate.timesheet"
+              src="/assets/Sidebar-assets/Default-Icons/Timesheet-default.png"
+              alt="time-logo"
+              class="sidebar-logo"
+            />
 
-          <img
-            *ngIf="navigate.salary"
-            src="/assets/Sidebar-assets/Active-Icons/Salary.png"
-            alt="sala-logo"
-            class="sidebar-logo"
-          />
-        </div>
-        <span class="menu-label">Salary</span>
-      </li>
-      <li nz-menu-item (click)="select('timesheet')">
-        <div class="sidemenu-logo-container">
-          <img
-            *ngIf="!navigate.timesheet"
-            src="/assets/Sidebar-assets/Default-Icons/Timesheet-default.png"
-            alt="time-logo"
-            class="sidebar-logo"
-          />
+            <img
+              *ngIf="navigate.timesheet"
+              src="/assets/Sidebar-assets/Active-Icons/Timesheet.png"
+              alt="time-logo"
+              class="sidebar-logo"
+            />
+          </div>
+          <span class="menu-label">Timesheet</span>
+        </li>
+        <li nz-menu-item (click)="select('leave')">
+          <div class="sidemenu-logo-container">
+            <img
+              *ngIf="!navigate.leave"
+              src="/assets/Sidebar-assets/Default-Icons/Leave-default.png"
+              alt="leav-logo"
+              class="sidebar-logo"
+            />
 
-          <img
-            *ngIf="navigate.timesheet"
-            src="/assets/Sidebar-assets/Active-Icons/Timesheet.png"
-            alt="time-logo"
-            class="sidebar-logo"
-          />
-        </div>
-        <span class="menu-label">Timesheet</span>
-      </li>
-      <li nz-menu-item (click)="select('leave')">
-        <div class="sidemenu-logo-container">
-          <img
-            *ngIf="!navigate.leave"
-            src="/assets/Sidebar-assets/Default-Icons/Leave-default.png"
-            alt="leav-logo"
-            class="sidebar-logo"
-          />
+            <img
+              *ngIf="navigate.leave"
+              src="/assets/Sidebar-assets/Active-Icons/Leave.png"
+              alt="leav-logo"
+              class="sidebar-logo"
+            />
+          </div>
+          <span class="menu-label">Leave</span>
+        </li>
+        <li nz-menu-group nzTitle="WORKSPACE"></li>
+        <li nz-menu-item (click)="select('expenses')">
+          <div class="sidemenu-logo-container">
+            <img
+              *ngIf="!navigate.expenses"
+              src="/assets/Sidebar-assets/Default-Icons/Expenses-default.png"
+              alt="Expe-logo"
+              class="sidebar-logo"
+            />
 
-          <img
-            *ngIf="navigate.leave"
-            src="/assets/Sidebar-assets/Active-Icons/Leave.png"
-            alt="leav-logo"
-            class="sidebar-logo"
-          />
-        </div>
-        <span class="menu-label">Leave</span>
-      </li>
-      <li nz-menu-group nzTitle="WORKSPACE"></li>
-      <li nz-menu-item (click)="select('expenses')">
-        <div class="sidemenu-logo-container">
-          <img
-            *ngIf="!navigate.expenses"
-            src="/assets/Sidebar-assets/Default-Icons/Expenses-default.png"
-            alt="Expe-logo"
-            class="sidebar-logo"
-          />
-
-          <img
-            *ngIf="navigate.expenses"
-            src="/assets/Sidebar-assets/Active-Icons/Expenses.png"
-            alt="Expe-logo"
-            class="sidebar-logo"
-          />
-        </div>
-        <span class="menu-label">Expenses</span>
-      </li>
-    </ul>
-  </nz-sider>
-</nz-layout>
+            <img
+              *ngIf="navigate.expenses"
+              src="/assets/Sidebar-assets/Active-Icons/Expenses.png"
+              alt="Expe-logo"
+              class="sidebar-logo"
+            />
+          </div>
+          <span class="menu-label">Expenses</span>
+        </li>
+      </ul>
+    </nz-sider>
+  </nz-layout>
+</div>

@@ -20,12 +20,13 @@ import { NgModule } from '@angular/core';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { TopbarComponent } from './topbar/topbar.component';
 import en from '@angular/common/locales/en';
 
 registerLocaleData(en);
 
 @NgModule({
-  declarations: [SidebarComponent],
+  declarations: [SidebarComponent, TopbarComponent],
   imports: [
     CommonModule,
     IconsProviderModule,
@@ -34,6 +35,7 @@ registerLocaleData(en);
     DemoNgZorroAntdModule,
   ],
   exports: [
+    TopbarComponent,
     SidebarComponent,
     IconsProviderModule,
     NzLayoutModule,

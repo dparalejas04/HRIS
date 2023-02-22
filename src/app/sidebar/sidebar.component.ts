@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { EventsService } from '../events.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,15 +11,13 @@ import { Router } from '@angular/router';
 export class SidebarComponent implements OnInit {
   public isCollapsed: boolean;
   visible: boolean = false;
-  hoverImage: boolean;
 
   constructor(private router: Router) {
     this.isCollapsed = true;
-    this.hoverImage = false;
-  }
 
-  switchImage(hover: boolean) {
-    this.hoverImage = hover;
+    EventsService.sidebarEvents.subscribe((res) => {
+      this.isCollapsed = res;
+    });
   }
 
   ngOnInit(): void {}
@@ -50,6 +49,7 @@ export class SidebarComponent implements OnInit {
       }
       case 'employees': {
         this.navigate.employees = true;
+        this.redirectEmployees();
         break;
       }
       case 'department': {
@@ -95,15 +95,7 @@ export class SidebarComponent implements OnInit {
     this.router.navigateByUrl('/employees');
   }
 
-  toggleCollapsed(): void {
-    this.isCollapsed = !this.isCollapsed;
-  }
-
-  change(value: boolean): void {
-    console.log(value);
-  }
-
-  signOut(): void {
-    this.router.navigateByUrl('/login');
-  }
+  // toggleCollapsed(): void {
+  //   this.isCollapsed = !this.isCollapsed;
+  // }
 }
