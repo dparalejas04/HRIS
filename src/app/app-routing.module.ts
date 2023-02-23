@@ -15,8 +15,8 @@ const routes: Routes = [
   },
 
   {
-    path: 'sidebar',
-    component: SidebarComponent,
+    path: 'topbar',
+    component: TopbarComponent,
     // loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
   {

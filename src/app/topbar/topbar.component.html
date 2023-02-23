@@ -1,73 +1,75 @@
 <!-- HEADER -->
-<nz-layout class="header-layout">
-  <nz-header>
-    <span
-      class="trigger"
-      nz-icon
-      [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-      (click)="toggleSidebar()"
-    ></span>
-    <span class="line-header">|</span>
-    <img
-      src="/assets/Dashboard-assets/Header-logo.png"
-      alt="hris-logo"
-      class="hris-logo"
-    />
-    <div
-      class="acc-container"
-      nz-button
-      nz-popover
-      [(nzPopoverVisible)]="visible"
-      (nzPopoverVisibleChange)="change($event)"
-      nzPopoverTrigger="click"
-      [nzPopoverContent]="contentTemplate"
-      nzPopoverPlacement="bottomRight"
-    >
+<div class="header-layout">
+  <nz-layout>
+    <nz-header>
+      <span
+        class="trigger"
+        nz-icon
+        [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+        (click)="toggleSidebar()"
+      ></span>
+      <span class="line-header">|</span>
       <img
-        src="/assets/Dashboard-assets/Office-Manager.png"
-        alt="picture"
-        class="acc-pic"
+        src="/assets/Dashboard-assets/Header-logo.png"
+        alt="hris-logo"
+        class="hris-logo"
       />
-      <span class="acc-name">Office Manager</span>
-      <ng-template #contentTemplate>
-        <div
-          class="overlay"
-          (mouseover)="hoverImage = true"
-          (mouseout)="hoverImage = false"
-        >
-          <div class="acc-icons">
-            <img
-              *ngIf="!hoverImage"
-              src="/assets/Header-assets/profile.png"
-              alt="profile"
-              class="profile-icon"
-            />
-            <img
-              *ngIf="hoverImage"
-              src="/assets/Header-assets/profile-hover.png"
-              alt="signout-hover"
-              class="profile-icon"
-            />
-            <a>Profile</a>
+      <div
+        class="acc-container"
+        nz-button
+        nz-popover
+        [(nzPopoverVisible)]="visible"
+        (nzPopoverVisibleChange)="change($event)"
+        nzPopoverTrigger="click"
+        [nzPopoverContent]="contentTemplate"
+        nzPopoverPlacement="bottomRight"
+      >
+        <img
+          src="/assets/Dashboard-assets/Office-Manager.png"
+          alt="picture"
+          class="acc-pic"
+        />
+        <span class="acc-name">Office Manager</span>
+        <ng-template #contentTemplate>
+          <div
+            class="overlay"
+            (mouseover)="hoverImage = true"
+            (mouseout)="hoverImage = false"
+          >
+            <div class="acc-icons">
+              <img
+                *ngIf="!hoverImage"
+                src="/assets/Header-assets/profile.png"
+                alt="profile"
+                class="profile-icon"
+              />
+              <img
+                *ngIf="hoverImage"
+                src="/assets/Header-assets/profile-hover.png"
+                alt="signout-hover"
+                class="profile-icon"
+              />
+              <a>Profile</a>
+            </div>
+            <div class="acc-icons">
+              <img
+                *ngIf="!hoverImage"
+                src="/assets/Header-assets/signout.png"
+                alt="signout"
+                class="sign-out"
+              />
+              <img
+                *ngIf="hoverImage"
+                src="/assets/Header-assets/signout-hover.png"
+                alt="signout-hover"
+                class="sign-out"
+              />
+              <a (click)="signOut()">Sign out</a>
+            </div>
           </div>
-          <div class="acc-icons">
-            <img
-              *ngIf="!hoverImage"
-              src="/assets/Header-assets/signout.png"
-              alt="signout"
-              class="sign-out"
-            />
-            <img
-              *ngIf="hoverImage"
-              src="/assets/Header-assets/signout-hover.png"
-              alt="signout-hover"
-              class="sign-out"
-            />
-            <a (click)="signOut()">Sign out</a>
-          </div>
-        </div>
-      </ng-template>
-    </div>
-  </nz-header>
-</nz-layout>
+        </ng-template>
+      </div>
+    </nz-header>
+  </nz-layout>
+</div>
 <!-- ////////////////////////////////////////////// -->
