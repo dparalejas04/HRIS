@@ -29,11 +29,19 @@ nz-sider {
   background: #fcf6f5;
 }
 
+// OLD SIDEBAR LAYOUT
+// .sidebar-layout {
+//   display: flex;
+//   align-items: flex-start;
+//   height: 89%;
+//   margin-top: 20px;
+//   justify-content: center;
+// }
+
 .sidebar-layout {
   display: flex;
   align-items: flex-start;
-  height: 89%;
-  margin-top: 20px;
+  height: 88vh;
   justify-content: center;
 }
 

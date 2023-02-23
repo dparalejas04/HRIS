@@ -24,3 +24,25 @@
   font-family: HELVETICAOBLIQUE;
   src: url("assets/fonts/HelveticaLtObl.ttf");
 }
+
+.main-container {
+  display: flex;
+  background-color: #fcf6f5;
+  // justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+  overflow: auto;
+}
+
+.main-header-container {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 50px;
+}
+
+.main-content-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}

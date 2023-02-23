@@ -1,8 +1,75 @@
 <div class="main-container">
-  <app-topbar class="header-content"></app-topbar>
-  <app-sidebar class="sidebar-content"></app-sidebar>
+  <div class="main-header-container">
+    <app-topbar class="header-content"></app-topbar>
+  </div>
+
+  <div class="main-content-container">
+    <app-sidebar class="sidebar-content"></app-sidebar>
+    <div class="inner-content">
+      <div class="card-container">
+        <div class="card">
+          <img
+            src="/assets/Dashboard-assets/Employees-icon.png"
+            alt="total-employees"
+            class="icons"
+          />
+          <div class="text-container">
+            <span class="number">68</span>
+            <span class="card-title">Total Employees</span>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="/assets/Dashboard-assets/Present-icon.png"
+            alt="present"
+            class="icons"
+          />
+          <div class="text-container">
+            <span class="number">60</span>
+            <span class="card-title">Present Employees</span>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="/assets/Dashboard-assets/Absent-icon.png"
+            alt="absent"
+            class="icons"
+          />
+          <div class="text-container">
+            <span class="number">68</span>
+            <span class="card-title">Absent Employees</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="/assets/Dashboard-assets/Late-icon.png"
+            alt="late"
+            class="icons"
+          />
+          <div class="text-container">
+            <span class="number">01</span>
+            <span class="card-title">Late Employees</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="/assets/Dashboard-assets/OnLeave-icon.png"
+            alt="onLeave"
+            class="icons"
+          />
+          <div class="text-container">
+            <span class="number">04</span>
+            <span class="card-title">On Leave</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- CONTENT  -->
-  <div class="inner-content">
+  <!-- <div class="inner-content">
     <div class="card">
       <img
         src="/assets/Dashboard-assets/Employees-icon.png"
@@ -59,10 +126,10 @@
         <span class="number">04</span>
         <span class="card-title">On Leave</span>
       </div>
-    </div>
+    </div> -->
 
-    <!-- ANNOUNCEMENTS & EVENTS TAB -->
-    <div class="event-container">
+  <!-- ANNOUNCEMENTS & EVENTS TAB -->
+  <!-- <div class="event-container">
       <nz-tabset
         (nzSelectChange)="eventChange()"
         [nzTabBarExtraContent]="extraTemplate"
@@ -90,15 +157,14 @@
         <nz-tab [nzTitle]="'Events'">
           <nz-carousel *ngIf="reinitTab" nzAutoPlay [nzEffect]="'fade'">
             <div nz-carousel-content *ngFor="let index of imageUrls">
-              <!-- <h3>{{ index }}</h3> -->
-              <img [src]="index" ngClass="imgs" />
+                           <img [src]="index" ngClass="imgs" />
             </div>
           </nz-carousel>
         </nz-tab>
-      </nz-tabset>
+      </nz-tabset> -->
 
-      <!-- ACTION BUTTONS -->
-      <ng-template #extraTemplate>
+  <!-- ACTION BUTTONS -->
+  <!-- <ng-template #extraTemplate>
         <button nz-button id="add-button">
           <span nz-icon nzType="plus" nzTheme="outline"></span>ADD
         </button>
@@ -110,10 +176,10 @@
           />
         </button>
       </ng-template>
-    </div>
+    </div> -->
 
-    <!-- BIRTHDAY, ANNIVERSARY AND HOLIDAY TAB -->
-    <!-- <div class="occasion-container">
+  <!-- BIRTHDAY, ANNIVERSARY AND HOLIDAY TAB -->
+  <!-- <div class="occasion-container">
       <div class="tab-container">
         <div
           class="tab"
@@ -137,6 +203,6 @@
           Holidays
         </div>
       </div>
-    </div> -->
-  </div>
+    </div>
+  </div> -->
 </div>
