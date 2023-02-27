@@ -7,7 +7,7 @@
     <app-sidebar class="sidebar-content"></app-sidebar>
     <div class="inner-content">
       <div class="card-container">
-        <div class="card">
+        <div class="card" id="card1">
           <img
             src="/assets/Dashboard-assets/Employees-icon.png"
             alt="total-employees"
@@ -18,7 +18,7 @@
             <span class="card-title">Total Employees</span>
           </div>
         </div>
-        <div class="card">
+        <div class="card" id="card2">
           <img
             src="/assets/Dashboard-assets/Present-icon.png"
             alt="present"
@@ -29,7 +29,7 @@
             <span class="card-title">Present Employees</span>
           </div>
         </div>
-        <div class="card">
+        <div class="card" id="card3">
           <img
             src="/assets/Dashboard-assets/Absent-icon.png"
             alt="absent"
@@ -41,7 +41,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" id="card4">
           <img
             src="/assets/Dashboard-assets/Late-icon.png"
             alt="late"
@@ -53,7 +53,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" id="card5">
           <img
             src="/assets/Dashboard-assets/OnLeave-icon.png"
             alt="onLeave"
@@ -64,6 +64,11 @@
             <span class="card-title">On Leave</span>
           </div>
         </div>
+      </div>
+      <div class="event-container">
+        <div class="carousel-container"></div>
+
+        <div class="occasion-container"></div>
       </div>
     </div>
   </div>
@@ -180,28 +185,28 @@
 
   <!-- BIRTHDAY, ANNIVERSARY AND HOLIDAY TAB -->
   <!-- <div class="occasion-container">
-      <div class="tab-container">
-        <div
-          class="tab"
-          [class.active]="activeTab === 1"
-          (click)="activeTab = 1"
-        >
-          Birthday
-        </div>
-        <div
-          class="tab"
-          [class.active]="activeTab === 2"
-          (click)="activeTab = 2"
-        >
-          Anniversary
-        </div>
-        <div
-          class="tab"
-          [class.active]="activeTab === 3"
-          (click)="activeTab = 3"
-        >
-          Holidays
-        </div>
+        <div class="tab-container">
+          <div
+            class="tab"
+            [class.active]="activeTab === 1"
+            (click)="activeTab = 1"
+          >
+            Birthday
+          </div>
+          <div
+            class="tab"
+            [class.active]="activeTab === 2"
+            (click)="activeTab = 2"
+          >
+            Anniversary
+          </div>
+          <div
+            class="tab"
+            [class.active]="activeTab === 3"
+            (click)="activeTab = 3"
+          >
+            Holidays
+          </div>
       </div>
     </div>
   </div> -->

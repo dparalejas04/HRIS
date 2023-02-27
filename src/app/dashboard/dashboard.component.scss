@@ -2,9 +2,6 @@
 
 .sidebar-content {
   display: flex;
-  flex-direction: column;
-   align-self: flex-end;
- 
 }
 
 .inner-content {
@@ -14,30 +11,34 @@
   width: 100%;
   border-radius: 15px;
   box-shadow: 0px 2px 4px rgb(0 0 0 / 25%);
-  flex-direction: column;
+  flex-direction: row;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .card-container {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: row;
   width: 100%;
-  height: 100%;
+  // height: 100%;
   flex-wrap: wrap;
   align-content: flex-start;
 }
 
 .card {
- display: flex;
-    align-items: center;
-    padding: 50px 30px 50px 30px;
-    margin: 0px 10px 20px;
-    border-radius: 15px;
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.25);
-    justify-content: center;
-   }
+  display: flex;
+  align-items: center;
+  // padding: 50px 30px 50px 30px;
+  // margin: 0px 10px 20px;
+  padding: 2.5em 0.7em;
+  // padding: 35px 10px 35px 10px;
+  margin: 0px 5px 15px;
+  border-radius: 15px;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.25);
+  justify-content: center;
+}
 
 .icons {
   margin-right: 5px;
@@ -63,17 +64,23 @@
 }
 
 // ANNOUNCEMENTS & EVENTS TAB \\
+// .event-container {
+//   display: flex;
+//   background-color: white;
+//   /* margin-top: 20px; */
+//   padding: 20px;
+//   /* width: 59.5%; */
+//   width: 59%;
+//   height: 71%;
+//   border-radius: 15px;
+//   box-shadow: 0px 1px 10px rgb(0 0 0 / 25%);
+//   flex-direction: row;
+// }
+
 .event-container {
   display: flex;
-  background-color: white;
-  /* margin-top: 20px; */
-  padding: 20px;
-  /* width: 59.5%; */
-  width: 59%;
-  height: 71%;
-  border-radius: 15px;
-  box-shadow: 0px 1px 10px rgb(0 0 0 / 25%);
-  flex-direction: row;
+  width: 100%;
+  // background-color: red;
 }
 
 .tab-inner-container {
@@ -123,6 +130,19 @@ p {
 }
 
 // Carousel \\
+.carousel-container {
+  width: 45%;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 1px 10px rgb(0 0 0 / 25%);
+}
+
+.occasion-container {
+  width: 45%;
+  border-radius: 15px;
+  box-shadow: 0px 1px 10px rgb(0 0 0 / 25%);
+}
+
 [nz-carousel-content] {
   text-align: center;
   height: 100%;
@@ -155,19 +175,19 @@ p {
 //////////////////////////////////
 
 // BIRTHDAY, ANNIVERSARY AND HOLIDAY TAB \\
-.occasion-container {
-  display: flex;
-  border-radius: 15px;
-  /* margin-top: 20px; */
-  padding: 20px;
-  background-color: white;
-  box-shadow: 0px 1px 10px rgb(0 0 0 / 25%);
-  flex-direction: column;
-  width: 40%;
-  height: 71%;
-  // min-width: 31.7vw;
-  //   min-height: 56.5vh;
-}
+// .occasion-container {
+//   display: flex;
+//   border-radius: 15px;
+//   /* margin-top: 20px; */
+//   padding: 20px;
+//   background-color: white;
+//   box-shadow: 0px 1px 10px rgb(0 0 0 / 25%);
+//   flex-direction: column;
+//   width: 40%;
+//   height: 71%;
+//   // min-width: 31.7vw;
+//   //   min-height: 56.5vh;
+// }
 
 .tab-container {
   display: flex;
@@ -197,41 +217,52 @@ p {
 //////////////////////////////////
 
 // Mobile
-@media (max-width: 550px) {
+@media (max-width: 600px) {
   .sidebar-content {
     display: none;
   }
 
   .inner-content {
-    flex-direction: column; // switch to a column layout on smaller screens
-    align-items: center; // center child elements vertically
-    height: 100%;
-    width: 100%;
+    // flex-direction: column; // switch to a column layout on smaller screens
+    // align-items: center; // center child elements vertically
   }
 
   .card-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     justify-content: center;
   }
 
   .card {
-    flex: 0 0 80%; // make cards take up 100% of the width on smaller screens
-     }
-
-  // .main-header-container {
-  //   height: 71px;
-  //   margin-bottom: 0;
-  // }
+    // flex: 0 0 80%; // make cards take up 100% of the width on smaller screens
+    padding: 35px 15px 35px 15px;
+  }
 
   .icons {
     max-width: 60px;
   }
+
+  // .main-content-container {
+  //   height: fit-content;
+  // }
 }
 
 /* Media Query for Tablet */
-@media (min-width: 767px) and (max-width: 1023px) {
+@media (min-width: 601px) and (max-width: 1023px) {
+  // .main-content-container {
+  //   height: fit-content;
+  // }
+
+  // .inner-content {
+  //   align-items: center;
+  // }
+
+  .card-container {
+    justify-content: center;
+  }
+
+  .card {
+    padding: 35px 15px 35px 15px;
+  }
+
   .icons {
     max-width: 60px;
   }
@@ -239,7 +270,33 @@ p {
 
 /* Media Query for Desktop */
 @media (min-width: 1024px) {
+  .card {
+    padding: 2.5em 0.7em;
+  }
+
+  #card1 {
+    margin: 0px 5px 15px 0px;
+  }
+
+  #card5 {
+    margin: 0px 0px 15px 5px;
+  }
+
   .icons {
     max-width: 60px;
+  }
+}
+
+/* Media Query for Desktop 1700res*/
+@media (min-width: 1700px) {
+  .card {
+    padding: 35px 25px 35px 25px;
+  }
+}
+
+/* Media Query for Desktop 1900res*/
+@media (min-width: 1900px) {
+  .card {
+    padding: 40px 45px 40px 45px;
   }
 }

@@ -1,13 +1,5 @@
 // >> HEADER << \\
 
-// .ant-layout-header {
-//   height: 60px;
-//   padding: 0 15px 0 0;
-//   color: rgba(0, 0, 0, 0.85);
-//   line-height: 60px;
-//   background: #fff;
-// }
-
 .header-layout {
   display: flex;
   justify-content: center;
@@ -27,9 +19,6 @@
 
 nz-header {
   background: #fff;
-  // position: fixed;
-  // height: 60px;
-  // width: 100%;
   display: flex;
   flex-wrap: wrap;
   padding: 0 15px 0 0;
