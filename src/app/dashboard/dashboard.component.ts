@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, HostListener } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { SidebarComponent } from '../sidebar/sidebar.component';
@@ -13,6 +13,7 @@ export class DashboardComponent implements OnInit {
   visible: boolean = false;
   array = [1, 2, 3, 4];
   reinitTab = false;
+  testvar = "";
   activeTab = 1;
   // tabs = ['Announcements', 'Events'];
   // currentTabindex = 0;
@@ -23,7 +24,37 @@ export class DashboardComponent implements OnInit {
     '/assets/Dashboard-assets/Events/event.jpg',
   ];
 
-  constructor(private router: Router) {}
+  @ViewChild('innerContent') innerContent!: ElementRef;
+  @ViewChild('bodyContent') bodyContent!: ElementRef;
+
+  getHeight() {
+    const height = this.innerContent.nativeElement.offsetHeight;
+    console.log('height:', height);
+    return height;
+  }
+
+  setBodyHeight() {
+    const height = this.bodyContent.nativeElement.offsetHeight + 40;
+    this.innerContent.nativeElement.style.height = `${height}px`;
+    console.log('height:', height);
+   
+  }
+
+  ngAfterViewInit() {
+    this.setBodyHeight();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.setBodyHeight();
+  }
+
+  constructor(private router: Router) {
+
+      
+      // this.testvar = "haides!";
+
+  }
 
   setActiveTab(index: number) {
     this.activeTab = index;

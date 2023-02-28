@@ -32,8 +32,8 @@ nz-sider {
 .sidebar-layout {
   display: flex;
   align-items: flex-start;
-  height: 89%;
-  margin-top: 20px;
+  height: 100%;
+  padding-top: 75px !important;
   justify-content: center;
 }
 
