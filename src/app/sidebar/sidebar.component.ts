@@ -11,9 +11,11 @@ import { Router } from '@angular/router';
 })
 export class SidebarComponent implements OnInit {
   public isCollapsed: boolean;
+  public isMobile: boolean;
   visible: boolean = false;
 
   constructor(private router: Router) {
+    this.isMobile = false;
     this.isCollapsed = true;
 
     EventsService.sidebarEvents.subscribe((res) => {
@@ -21,7 +23,9 @@ export class SidebarComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.checkScreenWidth();
+  }
 
   navigate: any = {
     dashboard: true,
@@ -97,14 +101,37 @@ export class SidebarComponent implements OnInit {
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize(event: { target: { innerWidth: number } }) {
-    // show sidebar when screen size meets specified criteria
-    if (event.target.innerWidth <= 1023 && event.target.innerWidth >= 320) {
-      this.isCollapsed = false;
-    } else {
+  onResize(event: any) {
+    this.checkScreenWidth();
+  }
+
+  private checkScreenWidth() {
+    // check screen width and set isMobile and isCollapsed accordingly
+    const screenWidth = window.innerWidth;
+    if (screenWidth <= 1023) {
+      this.isMobile = true;
       this.isCollapsed = true;
+    } else {
+      this.isMobile = false;
+      this.isCollapsed = false;
     }
   }
+
+  toggleCollapsed() {
+    if (this.isMobile) {
+      this.isCollapsed = !this.isCollapsed;
+    }
+  }
+
+  // @HostListener('window:resize', ['$event'])
+  // onResize(event: { target: { innerWidth: number } }) {
+  //   // show sidebar when screen size meets specified criteria
+  //   if (event.target.innerWidth <= 1023 && event.target.innerWidth >= 320) {
+  //     this.isCollapsed = false;
+  //   } else {
+  //     this.isCollapsed = true;
+  //   }
+  // }
 
   // toggleCollapsed(): void {
   //   this.isCollapsed = !this.isCollapsed;
