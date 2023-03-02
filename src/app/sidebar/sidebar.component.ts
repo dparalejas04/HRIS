@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { EventsService } from '../events.service';
+import { HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -93,6 +94,16 @@ export class SidebarComponent implements OnInit {
 
   redirectEmployees(): void {
     this.router.navigateByUrl('/employees');
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: { target: { innerWidth: number } }) {
+    // show sidebar when screen size meets specified criteria
+    if (event.target.innerWidth <= 1023 && event.target.innerWidth >= 320) {
+      this.isCollapsed = false;
+    } else {
+      this.isCollapsed = true;
+    }
   }
 
   // toggleCollapsed(): void {

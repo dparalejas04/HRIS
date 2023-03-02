@@ -65,8 +65,60 @@
           </div>
         </div>
       </div>
+
       <div class="event-container">
-        <div class="carousel-container"></div>
+        <div class="carousel-container">
+          <nz-tabset
+            (nzSelectChange)="eventChange()"
+            [nzTabBarExtraContent]="extraTemplate"
+            nzSize="small"
+            nzType="card"
+          >
+            <nz-tab [nzTitle]="'Announcement'">
+              <div class="tab-inner-container">
+                <h2>Log-in and Log-out Reminder</h2>
+                <p>To: <span>Everyone</span></p>
+                <p>Date: <span>January 14, 2023 09:20:53 AM</span></p>
+                <p align="justify">
+                  As a reminder, it is important for all employees to log in and
+                  log out of our systems accurately to maintain accurate record
+                  keeping. Please make sure to log in when starting your work
+                  day and log out when ending it. This ensures that all working
+                  hours are accurately reflected and helps us better track
+                  productivity. Thank you for your cooperation in maintaining
+                  accurate records.
+                  <br /><br />
+                  Best regards,
+                </p>
+                <p>Office Manager</p>
+              </div>
+            </nz-tab>
+
+            <nz-tab [nzTitle]="'Events'">
+              <!-- <div class="tab2-inner-container"> -->
+              <nz-carousel *ngIf="reinitTab" nzAutoPlay [nzEffect]="'fade'">
+                <div nz-carousel-content *ngFor="let index of imageUrls">
+                  <img [src]="index" ngClass="imgs" />
+                </div>
+              </nz-carousel>
+              <!-- </div> -->
+            </nz-tab>
+          </nz-tabset>
+
+          <!-- ACTION BUTTONS -->
+          <ng-template #extraTemplate>
+            <button nz-button class="add-button">
+              <span nz-icon nzType="plus" nzTheme="outline"></span>ADD
+            </button>
+            <button nz-button class="setting-button">
+              <img
+                src="/assets/Dashboard-assets/Tabs/settings.png"
+                alt="settings"
+                class="tab-setting"
+              />
+            </button>
+          </ng-template>
+        </div>
 
         <div class="occasion-container"></div>
       </div>

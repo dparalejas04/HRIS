@@ -29,10 +29,9 @@
   display: flex;
   background-color: #fcf6f5;
   flex-direction: column;
-  height: 100%;
-  // height: 1000px;
+  // height: 100%;
   width: 100%;
-  overflow: auto;
+  // overflow: auto;
 }
 
 .main-header-container {
@@ -47,4 +46,5 @@
   height: 100%;
   display: flex;
   flex-direction: row;
+  overflow: auto;
 }

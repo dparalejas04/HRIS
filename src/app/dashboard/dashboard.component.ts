@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { SidebarComponent } from '../sidebar/sidebar.component';
+import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -37,77 +38,15 @@ export class DashboardComponent implements OnInit {
   //   // this.currentTabindex = index;
   // }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event: { target: { innerWidth: number } }) {
+    // show sidebar when screen size meets specified criteria
+    if (event.target.innerWidth <= 1023 && event.target.innerWidth >= 320) {
+      this.isCollapsed = false;
+    } else {
+      this.isCollapsed = true;
+    }
+  }
+
   ngOnInit(): void {}
-
-  // navigate: any = {
-  //   dashboard: true,
-  //   employees: false,
-  //   department: false,
-  //   position: false,
-  //   computers: false,
-  //   appraisal: false,
-  //   salary: false,
-  //   timesheet: false,
-  //   leave: false,
-  //   expenses: false,
-  // };
-
-  // redirectDashboard(): void {
-  //   this.router.navigateByUrl('/dashboard');
-  // }
-
-  // change(value: boolean): void {
-  //   console.log(value);
-  // }
-
-  // public select(navigate: string) {
-  //   for (const key in this.navigate) {
-  //     this.navigate[key] = false;
-  //   }
-
-  //   switch (navigate) {
-  //     case 'dashboard': {
-  //       //statements;
-  //       this.navigate.dashboard = true;
-  //       this.redirectDashboard();
-  //       break;
-  //     }
-  //     case 'employees': {
-  //       this.navigate.employees = true;
-  //       break;
-  //     }
-  //     case 'department': {
-  //       this.navigate.department = true;
-  //       break;
-  //     }
-  //     case 'position': {
-  //       this.navigate.position = true;
-  //       break;
-  //     }
-  //     case 'computers': {
-  //       this.navigate.computers = true;
-  //       break;
-  //     }
-  //     case 'appraisal': {
-  //       this.navigate.appraisal = true;
-  //       break;
-  //     }
-  //     case 'salary': {
-  //       this.navigate.salary = true;
-  //       break;
-  //     }
-  //     case 'timesheet': {
-  //       this.navigate.timesheet = true;
-  //       break;
-  //     }
-  //     case 'leave': {
-  //       this.navigate.leave = true;
-  //       break;
-  //     }
-  //     case 'expenses': {
-  //       this.navigate.expenses = true;
-  //       break;
-  //     }
-  //   }
-  // }
 }
