@@ -1,35 +1,33 @@
-a {
-  text-decoration: none;
+* {
+  box-sizing: border-box;
 }
 
 .login-bg {
-  background-image: url("/assets/Login-assets/Background.png");
+  background-image: url(/assets/Login-assets/Background.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: 100%;
   width: 100%;
-  position: fixed;
-  padding: 0px;
-  margin: 0;
-  top: 0;
-  right: 0;
-  z-index: -1;
+}
+
+.login-inner-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
 }
 
 .card {
   background-color: white;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  top: 50%;
-  left: 50%;
   margin: auto;
-  padding: 50px;
+  padding: 45px;
   box-shadow: 1px 1px 20px 0px rgba(0, 0, 0, 0.25);
   border-radius: 30px;
-  width: 35%;
-  // min-width: 320px;
-  min-width: 250px;
+  width: 45%;
 }
 
 .card:hover {
@@ -45,13 +43,8 @@ a {
 }
 
 .logo-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  padding: 0;
   margin-bottom: 30px;
-  width: 100%;
+  width: 92%;
 }
 
 .hris-logo {
@@ -60,41 +53,35 @@ a {
 
 .form-container {
   display: flex;
-  width: 80%;
+  width: 75%;
   flex-direction: column;
-  align-content: center;
   justify-content: center;
-  flex-wrap: wrap;
 }
 
 label {
   font-family: AVENIRROMAN;
-  font-size: 17px;
-  font-weight: 400;
+  font-size: 1.05rem;
+  font-weight: 500;
   line-height: 23px;
 }
 
 input {
   margin-bottom: 20px;
   margin-top: 5px;
-  box-sizing: border-box;
-  // min-width: 27vw;
   width: 100%;
-  border: 1px solid #e4e9f2;
   padding: 7px 15px;
   border-radius: 10px;
   border: 1px solid #e4e9f2;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
   background: #f7f9fc;
-  height: 7vh;
-  font-weight: 400;
-  font-size: 16px;
-  outline-color: #1a73e8;
+  height: 50px;
+  // outline-color: #1a73e8;
+  outline-color: #423faf;
 }
 
 input::placeholder {
   font-family: Helvetica;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   color: #8f9bb3;
   line-height: 21px;
@@ -108,13 +95,13 @@ input::placeholder {
 
 .fa {
   color: #7a797e;
-  font-size: 20px;
+  font-size: 1.1rem;
   margin-left: -20px;
   transform: translate(-15px, -7px);
 }
 
 .fa-eye {
-  font-size: 20px;
+  font-size: 1.1rem;
   color: #7a797e;
   margin-left: -20px;
   transform: translate(-15px, -7px);
@@ -125,13 +112,13 @@ input::placeholder {
   align-items: center;
   justify-content: flex-start;
   margin-bottom: 20px;
-  width: 80%;
+  width: 75%;
 }
 
 .fpws {
   font-family: AVENIRMEDIUM;
-  font-size: 14px;
-  opacity: 65%;
+  font-size: 0.9rem;
+  opacity: 0.6;
 }
 
 .fpws a {
@@ -141,102 +128,96 @@ input::placeholder {
 .login-form-action {
   display: flex;
   width: 100%;
-  flex-direction: column;
-  align-content: center;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
 }
 
 button {
-  align-self: center;
-  // padding: 0px 151px;
   background-color: #3366ff;
   border-radius: 30px;
-  // width: 20vw;
-  // max-width: 20vw;
   width: 60%;
-  min-width: 20vw;
-  white-space: pre;
-  height: 6vh;
+  height: 45px;
   border: 0px;
   color: white;
   cursor: pointer;
-  font-size: 17px;
+  font-size: 1.2em;
   font-family: Helvetica;
-  font-weight: 500;
+  font-weight: 600;
+  transition: 0.3s;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
 }
 
-.button:hover {
+button:hover {
   background-color: #ced8f7;
   color: #3366ff;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
 }
 
 .footer-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: flex-end;
-  align-content: flex-end;
-  flex-wrap: wrap;
   width: 100%;
-  height: 100%;
+  margin-top: 15px;
 }
 
 .footer {
   display: flex;
   text-align: center;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  align-content: space-around;
-  flex-direction: row;
+  align-content: flex-end;
+  flex-direction: column;
   flex-wrap: wrap;
   width: 100%;
-  height: 5vh;
+  height: 35px;
   background-color: #606060;
   opacity: 40%;
   font-family: AVENIRROMAN;
-  font-size: 12px;
+  font-size: 0.8rem;
   color: white;
-  position: absolute;
-  top: 95%;
-  padding: 0;
-  margin: auto;
-  left: 0;
-  // position: absolute;
-  // transform: translate(-40px, 0px);
-}
-
-.footer-info {
-  position: absolute;
-  transform: translate(-45px, 0px);
 }
 
 .intercard-logo {
   width: 100%;
-  height: auto;
-  margin-left: 3px;
-  padding: 0;
+  margin: 0px 10px 0px 5px;
   max-width: 20px;
-  // position: absolute;
-  transform: translate(-20px, 0px);
+}
+
+/* Media Query for Mini Smartphones */
+@media (max-width: 360px) {
+  label {
+    font-size: 0.6rem;
+  }
+
+  .card {
+    padding: 25px;
+  }
 }
 
 /* Media Query for Smartphones */
 @media (max-width: 767px) {
   .card {
-    padding: 20px;
-    width: 80%;
-    // min-width: 300px;
-    min-width: 90vw;
+    padding: 30px;
+    min-width: 80vw;
+    max-width: 50vw;
+  }
+
+  .logo-container {
+    width: 100%;
+  }
+
+  .form-container {
+    width: 90%;
+  }
+
+  .fp-container {
+    width: 90%;
   }
 }
 
 /* Media Query for Tablet */
 @media (min-width: 767px) and (max-width: 1023px) {
   .card {
-    padding: 40px;
+    padding: 30px;
     width: 40%;
     min-width: 60vw;
   }
@@ -245,8 +226,7 @@ button {
 /* Media Query for Desktop */
 @media (min-width: 1024px) {
   .card {
-    padding: 50px;
-    width: 40%;
+    max-width: 40vw;
     min-width: 45vw;
   }
 }

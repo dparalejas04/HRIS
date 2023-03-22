@@ -24,7 +24,7 @@ export class SidebarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.checkScreenWidth();
+    // this.checkScreenWidth();
   }
 
   navigate: any = {
@@ -100,22 +100,22 @@ export class SidebarComponent implements OnInit {
     this.router.navigateByUrl('/employees');
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    this.checkScreenWidth();
-  }
+  // @HostListener('window:resize', ['$event'])
+  // onResize(event: any) {
+  //   this.checkScreenWidth();
+  // }
 
-  private checkScreenWidth() {
-    // check screen width and set isMobile and isCollapsed accordingly
-    const screenWidth = window.innerWidth;
-    if (screenWidth <= 1023) {
-      this.isMobile = true;
-      this.isCollapsed = true;
-    } else {
-      this.isMobile = false;
-      this.isCollapsed = false;
-    }
-  }
+  // private checkScreenWidth() {
+  //   // check screen width and set isMobile and isCollapsed accordingly
+  //   const screenWidth = window.innerWidth;
+  //   if (screenWidth <= 1023) {
+  //     this.isMobile = true;
+  //     this.isCollapsed = true;
+  //   } else {
+  //     this.isMobile = false;
+  //     this.isCollapsed = false;
+  //   }
+  // }
 
   toggleCollapsed() {
     if (this.isMobile) {
